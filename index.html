@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirpa Enterprises</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -25,37 +25,96 @@
         body {
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* Hero Banner Section */
+        /* Hero Banner Section - PICTURE SLOT 2 (BACKGROUND) */
         .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%), 
+                        url('header-bg.jpg'); /* <-- Change 'header-bg.jpg' to your background image name later */
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
             border-bottom: 4px solid var(--primary);
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             font-weight: 700;
             margin-bottom: 15px;
             letter-spacing: -0.5px;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #94a3b8;
-            max-width: 600px;
-            margin: 0 autobi;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
         }
 
         /* Main Container */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px;
+        }
+
+        /* New Corporate Intro Layout - PICTURE SLOT 1 */
+        .intro-section {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 968px) {
+            .intro-section { grid-template-columns: 1fr; gap: 30px; }
+        }
+
+        .intro-text p {
+            margin-bottom: 18px;
+            color: #334155;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-image-box {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            background-color: #e2e8f0; /* Gray placeholder color until you upload a photo */
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px dashed var(--gray);
+        }
+
+        .intro-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
 
         /* Graphical Grid Layout */
@@ -63,14 +122,15 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            margin-top: 30px;
+            margin-bottom: 60px;
         }
 
         .card {
             background: white;
             padding: 35px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             border: 1px solid #e2e8f0;
             transition: transform 0.2s ease;
         }
@@ -96,7 +156,6 @@
             background: white;
             border-radius: 16px;
             padding: 40px;
-            margin-top: 60px;
             border: 1px solid #e2e8f0;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -149,7 +208,7 @@
 
         .form-control:focus {
             outline: 2px solid var(--primary);
-            background-white: white;
+            background-color: white;
         }
 
         .btn {
@@ -177,6 +236,22 @@
     </section>
 
     <div class="container">
+        
+        <div class="intro-section">
+            <div class="intro-text">
+                <p>An enterprise established with the vision of creating businesses, unlocking opportunities, and driving sustainable economic growth. Incorporated as a Private Limited Company and recognized under the Startup India initiative with MSME registration, the organization is built on the principles of entrepreneurship, innovation, and responsible business practices. It is committed to identifying emerging opportunities, facilitating procurement solutions, and fostering strategic partnerships that create long-term value for stakeholders.</p>
+                <p>With a focus on sustainable development and inclusive progress, the enterprise seeks to support institutions, industries, and communities through efficient execution, collaborative engagement, and forward-thinking initiatives. By combining entrepreneurial ambition with a structured and compliant business framework, the organization is positioned to pursue opportunities across diverse sectors while maintaining the highest standards of professionalism and integrity.</p>
+                <p>Driven by the belief that meaningful growth is achieved through innovation and opportunity creation, the enterprise aims to serve as a catalyst for new ventures, economic participation, and responsible enterprise development. Through strategic partnerships, operational excellence, and a commitment to long-term value creation, it strives to contribute to a business ecosystem that encourages resilience, sustainability, and shared prosperity, creating a lasting positive impact for communities, institutions, and industry.</p>
+            </div>
+            
+            <div class="intro-image-box">
+                <img src="intro-pic.jpg" alt="Mirpa Strategic Vision" onerror="this.style.display='none'; this.parentNode.innerHTML='<p style=\'color:var(--gray); padding:20px; text-align:center;\'>📸 <br> Upload an image named <b>intro-pic.jpg</b> to GitHub to display your custom graphic here.</p>'">
+            </div>
+        </div>
+
+        <h2 class="section-title">Our Core Operations</h2>
+        <p style="text-align: center; color: var(--gray); margin-bottom: 30px;">Deploying specialized ecosystems and compliant infrastructure across regions.</p>
+
         <div class="grid">
             <div class="card">
                 <i class="fa-solid fa-recycle"></i>
@@ -205,7 +280,7 @@
                 </div>
             </div>
 
-            <form action="https://formspree.io/f/your-id-here" method="POST">
+            <form action="#" method="POST">
                 <div class="form-group">
                     <label>Your Name</label>
                     <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
