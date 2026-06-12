@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        <style>
+/* This blocks the badge entirely */
+#vercel-web-analytics, 
+.vercel-toolbar, 
+[data-v0-badge], 
+.v0-badge, 
+#v0-badge,
+vercel-vercel-toolbar { 
+  display: none !important; 
+  visibility: hidden !important; 
+  opacity: 0 !important;
+  pointer-events: none !important; 
+}
+
+/* This restores your premium theme colors */
+:root {
+  --primary: #0070f3; /* Premium Tech Blue */
+  --dark: #0f172a;    /* Clean Dark Slate */
+  --light: #f8fafc;   /* Soft Ice White */
+  --gray: #64748b;    /* Pro Subtext Gray */
+}
 #vercel-web-analytics, 
 .vercel-toolbar, 
 [data-v0-badge], 
