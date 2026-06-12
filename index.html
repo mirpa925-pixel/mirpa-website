@@ -25,85 +25,272 @@
             position: absolute !important;
             left: -9999px !important;
         }
+    </style>
 
+    <style>
         :root {
-            --primary: #0070f3;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
+            --primary: #0082f3;
+            --primary-dark: #0066c7;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-light: #e2e8f0;
+            --bg-light: #ffffff;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--dark) !important;
-            color: var(--light);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 5rem;
+        }
+
+        /* Navbar Layout */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 8%;
+            border-bottom: 1px solid var(--border-light);
+            background: #fff;
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .logo span { color: var(--primary); font-size: 1.5rem; line-height: 0; }
+        nav { display: flex; gap: 2.5rem; }
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .btn-contact {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: background 0.2s;
+        }
+        .btn-contact:hover { background-color: var(--primary-dark); }
+
+        /* Hero Layout */
+        .hero {
+            text-align: center;
+            padding: 6rem 10% 4rem 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .tagline-top {
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+        .hero-buttons {
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
+            gap: 1rem;
         }
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: rgba(30, 41, 59, 0.7);
-            padding: 3rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
+        .btn-primary {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
         }
-        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        p { color: var(--gray); font-size: 1.2rem; margin-bottom: 2rem; }
-        .badge-status {
-            display: inline-block;
-            background: rgba(0, 112, 243, 0.2);
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-dark);
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+        }
+
+        /* Sections Grid */
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 8%;
+        }
+        .section-title {
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-left: 2.5rem;
+        }
+        .section-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 1.5rem;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .grid-three {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .card {
+            border: 1px solid var(--border-light);
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            background: #fff;
+        }
+        .card-num {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .card-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .card-icon {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 968px) {
+            .grid-three { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+            nav { display: none; }
         }
     </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MIRPA <span>■</span></div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#operations">Operations</a>
+            <a href="#connect">Connect</a>
+        </nav>
+        <a href="#connect" class="btn-contact">Get In Touch</a>
+    </header>
+
+    <section class="hero">
+        <div class="tagline-top">Private Limited • Startup India • MSME</div>
+        <h1>Mirpa Enterprises</h1>
+        <p class="hero-subtitle">Building Sustainable, Circular Infrastructure For Tomorrow.</p>
+        <div class="hero-buttons">
+            <a href="#operations" class="btn-primary">Our Operations</a>
+            <a href="#about" class="btn-secondary">Learn More</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-container">
+        <div class="section-title">About</div>
+        <div class="grid-three">
+            <div class="card">
+                <div class="card-num">01</div>
+                <p class="card-text">An enterprise established with the vision of creating businesses, unlocking opportunities, and driving sustainable economic growth. Incorporated as a Private Limited Company and recognized under the Startup India initiative with MSME registration, the organization is built on the principles of entrepreneurship, innovation, and responsible business practices. It is committed to identifying emerging opportunities, facilitating procurement solutions, and fostering strategic partnerships that create long-term value for stakeholders.</p>
+            </div>
+            <div class="card">
+                <div class="card-num">02</div>
+                <p class="card-text">With a focus on sustainable development and inclusive progress, the enterprise seeks to support institutions, industries, and communities through efficient execution, collaborative engagement, and forward-thinking initiatives. By combining entrepreneurial ambition with a structured and compliant business framework, the organization is positioned to pursue opportunities across diverse sectors while maintaining the highest standards of professionalism and integrity.</p>
+            </div>
+            <div class="card">
+                <div class="card-num">03</div>
+                <p class="card-text">Driven by the belief that meaningful growth is achieved through innovation and opportunity creation, the enterprise aims to serve as a catalyst for new ventures, economic participation, and responsible enterprise development. Through strategic partnerships, operational excellence, and a commitment to long-term value creation, it strives to contribute to a business ecosystem that encourages resilience, sustainability, and shared prosperity, creating a lasting positive impact for communities, institutions, and industry.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="operations" class="section-container">
+        <div class="section-title">Core Operations</div>
+        <div class="grid-three">
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <div class="card-title">Strategic Procurement & Supply Solutions</div>
+                <div class="card-num">01 / 05</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏛️</div>
+                <div class="card-title">Government & Institutional Contracting Services</div>
+                <div class="card-num">02 / 05</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">💡</div>
+                <div class="card-title">Enterprise Development & Opportunity Creation</div>
+                <div class="card-num">03 / 05</div>
+            </div>
+        </div>
+    </section>
 
     <script>
         (function() {
-            const targets = [
-                '#vercel-web-analytics', '.vercel-toolbar', '[data-v0-badge]', 
-                '.v0-badge', '#v0-badge', 'vercel-vercel-toolbar', '.vercel-toolbar-container'
-            ];
-            
-            function obliterate() {
-                targets.forEach(s => document.querySelectorAll(s).forEach(e => e.remove()));
+            const elNames = ['#vercel-web-analytics', '.vercel-toolbar', '[data-v0-badge]', '.v0-badge', '#v0-badge', 'vercel-vercel-toolbar', '.vercel-toolbar-container'];
+            function dropBadge() {
+                elNames.forEach(s => document.querySelectorAll(s).forEach(e => e.remove()));
                 document.querySelectorAll('div').forEach(d => {
-                    if (d.className && typeof d.className === 'string' && d.className.includes('v0-badge')) {
-                        d.remove();
-                    }
+                    if (d.className && typeof d.className === 'string' && d.className.includes('v0-badge')) d.remove();
                 });
             }
-
-            // Guard the website live as it loads
-            const observer = new MutationObserver((mutations) => {
-                obliterate();
-            });
-
-            observer.observe(document.documentElement, {
-                childList: true,
-                subtree: true
-            });
-
-            // Fallback backups
-            obliterate();
-            window.addEventListener('DOMContentLoaded', obliterate);
-            window.addEventListener('load', obliterate);
-            setInterval(obliterate, 50);
+            const observer = new MutationObserver(() => dropBadge());
+            observer.observe(document.documentElement, { childList: true, subtree: true });
+            dropBadge();
+            window.addEventListener('DOMContentLoaded', dropBadge);
+            window.addEventListener('load', dropBadge);
+            setInterval(dropBadge, 30);
         })();
     </script>
-</head>
-<body>
-    <div class="container">
-        <h1>Mirpa Enterprises Private Limited</h1>
-        <p>Circular Infrastructure Hub & Sustainable Asset Management</p>
-        <span class="badge-status">System Live & Fully Secured</span>
-    </div>
 </body>
 </html>
