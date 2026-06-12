@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirpa Enterprises</title>
+    
     <style>
-        /* 1. FORCE CSS BLANKET ON ALL BADGES */
         #vercel-web-analytics, 
         .vercel-toolbar, 
         [data-v0-badge], 
         .v0-badge, 
         #v0-badge,
         vercel-vercel-toolbar,
-        div[class*="v0-badge"],
+        iframe[src*="vercel"],
         [class*="v0-badge"],
-        iframe[src*="vercel"] { 
+        div[class*="v0-badge"],
+        .vercel-toolbar-container { 
             display: none !important; 
             visibility: hidden !important; 
             opacity: 0 !important;
             pointer-events: none !important; 
             width: 0 !important;
             height: 0 !important;
+            position: absolute !important;
+            left: -9999px !important;
         }
 
         :root {
@@ -61,6 +64,40 @@
             font-weight: 600;
         }
     </style>
+
+    <script>
+        (function() {
+            const targets = [
+                '#vercel-web-analytics', '.vercel-toolbar', '[data-v0-badge]', 
+                '.v0-badge', '#v0-badge', 'vercel-vercel-toolbar', '.vercel-toolbar-container'
+            ];
+            
+            function obliterate() {
+                targets.forEach(s => document.querySelectorAll(s).forEach(e => e.remove()));
+                document.querySelectorAll('div').forEach(d => {
+                    if (d.className && typeof d.className === 'string' && d.className.includes('v0-badge')) {
+                        d.remove();
+                    }
+                });
+            }
+
+            // Guard the website live as it loads
+            const observer = new MutationObserver((mutations) => {
+                obliterate();
+            });
+
+            observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+
+            // Fallback backups
+            obliterate();
+            window.addEventListener('DOMContentLoaded', obliterate);
+            window.addEventListener('load', obliterate);
+            setInterval(obliterate, 50);
+        })();
+    </script>
 </head>
 <body>
     <div class="container">
@@ -68,32 +105,5 @@
         <p>Circular Infrastructure Hub & Sustainable Asset Management</p>
         <span class="badge-status">System Live & Fully Secured</span>
     </div>
-
-    <script>
-        function killBadge() {
-            const targets = [
-                '#vercel-web-analytics',
-                '.vercel-toolbar',
-                '[data-v0-badge]',
-                '.v0-badge',
-                '#v0-badge',
-                'vercel-vercel-toolbar'
-            ];
-            targets.forEach(selector => {
-                document.querySelectorAll(selector).forEach(el => el.remove());
-            });
-            
-            // Catch any rogue divs containing the phrase "v0-badge"
-            document.querySelectorAll('div').forEach(div => {
-                if(div.className && typeof div.className === 'string' && div.className.includes('v0-badge')) {
-                    div.remove();
-                }
-            });
-        }
-        // Run immediately, run when loaded, and loop every 100ms just in case
-        killBadge();
-        window.addEventListener('DOMContentLoaded', killBadge);
-        setInterval(killBadge, 100);
-    </script>
 </body>
 </html>
