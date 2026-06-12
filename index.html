@@ -28,28 +28,28 @@
             line-height: 1.7;
         }
 
-        /* Hero Banner Section - PICTURE SLOT 2 (BACKGROUND) */
+        /* Hero Banner with Snow Laden Ladakh Mountain Background */
         .hero {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%), 
-                        url('header-bg.jpg'); /* <-- Change 'header-bg.jpg' to your background image name later */
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.75) 100%), 
+                        url('https://images.unsplash.com/photo-1626082895617-2c6de3476af7?q=80&w=1920') no-repeat center center;
             background-size: cover;
-            background-position: center;
             color: white;
-            padding: 100px 20px;
+            padding: 140px 20px;
             text-align: center;
             border-bottom: 4px solid var(--primary);
         }
 
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 15px;
             letter-spacing: -0.5px;
+            text-transform: uppercase;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            color: #94a3b8;
+            font-size: 1.4rem;
+            color: #cbd5e1;
             max-width: 700px;
             margin: 0 auto;
             font-weight: 300;
@@ -62,7 +62,7 @@
             padding: 60px 20px;
         }
 
-        /* New Corporate Intro Layout - PICTURE SLOT 1 */
+        /* Corporate Intro Layout */
         .intro-section {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -73,6 +73,7 @@
             padding: 40px;
             border-radius: 16px;
             border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
         }
 
         @media (max-width: 968px) {
@@ -93,8 +94,8 @@
         .intro-image-box {
             width: 100%;
             height: 100%;
-            min-height: 300px;
-            background-color: #e2e8f0; /* Gray placeholder color until you upload a photo */
+            min-height: 320px;
+            background-color: #e2e8f0;
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -110,45 +111,97 @@
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             text-align: center;
+            margin-top: 20px;
             margin-bottom: 10px;
             letter-spacing: -0.5px;
         }
 
-        /* Graphical Grid Layout */
+        /* Premium Core Operations Grid Layout */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
             margin-top: 30px;
             margin-bottom: 60px;
         }
 
         .card {
             background: white;
-            padding: 35px;
+            padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.03);
             border: 1px solid #e2e8f0;
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary);
+            opacity: 0;
+            transition: opacity 0.2s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+        }
+
+        .card:hover::before {
+            opacity: 1;
         }
 
         .card i {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary);
             margin-bottom: 20px;
+            background: #eff6ff;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
         }
 
         .card h3 {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
+            font-weight: 600;
             margin-bottom: 12px;
             color: var(--dark);
+            line-height: 1.4;
+        }
+
+        /* Reserved Slots For Slides Layout (Zero Blank Space) */
+        .slides-container {
+            width: 100%;
+            background: #0f172a;
+            border-radius: 16px;
+            padding: 30px;
+            color: white;
+            margin-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            text-align: center;
+            border: 1px solid #334155;
+        }
+
+        .slides-placeholder-content i {
+            font-size: 3rem;
+            color: #3b82f6;
+            margin-bottom: 15px;
         }
 
         /* Modern Contact Form Section */
@@ -245,23 +298,41 @@
             </div>
             
             <div class="intro-image-box">
-                <img src="intro-pic.jpg" alt="Mirpa Strategic Vision" onerror="this.style.display='none'; this.parentNode.innerHTML='<p style=\'color:var(--gray); padding:20px; text-align:center;\'>📸 <br> Upload an image named <b>intro-pic.jpg</b> to GitHub to display your custom graphic here.</p>'">
+                <img src="intro-pic.jpg" alt="Mirpa Strategic Vision" onerror="this.style.display='none'; this.parentNode.innerHTML='<p style=\'color:var(--gray); padding:20px; text-align:center;\'>📸 <br> Upload an image named <b>intro-pic.jpg</b> to GitHub to display your main corporate team graphic here.</p>'">
             </div>
         </div>
 
-        <h2 class="section-title">Our Core Operations</h2>
-        <p style="text-align: center; color: var(--gray); margin-bottom: 30px;">Deploying specialized ecosystems and compliant infrastructure across regions.</p>
+        <h2 class="section-title">Core Operations</h2>
+        <p style="text-align: center; color: var(--gray); margin-bottom: 20px;">Structured focus areas running across strategic regional environments.</p>
 
         <div class="grid">
             <div class="card">
-                <i class="fa-solid fa-recycle"></i>
-                <h3>Circular Infrastructure Hub</h3>
-                <p>Component-level diagnostics, refurbishment, and extending lifecycle asset capacities safely and efficiently.</p>
+                <i class="fa-solid fa-boxes-packing"></i>
+                <h3>Strategic Procurement & Supply Solutions</h3>
             </div>
             <div class="card">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h3>Secure Data Destruction</h3>
-                <p>Industrial storage destruction operations keeping complete environmental safety and data compliance protocols intact.</p>
+                <i class="fa-solid fa-building-shield"></i>
+                <h3>Government & Institutional Contracting Services</h3>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Enterprise Development & Opportunity Creation</h3>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-handshake-angle"></i>
+                <h3>Strategic Partnerships & Business Growth Initiatives</h3>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-arrows-spin"></i>
+                <h3>Sustainable & Circular Economy Ventures</h3>
+            </div>
+        </div>
+
+        <div class="slides-container">
+            <div class="slides-placeholder-content">
+                <i class="fa-regular fa-images"></i>
+                <h3 style="margin-bottom: 10px;">Operations Visual Showcase Slide Deck</h3>
+                <p style="color: #94a3b8; max-width: 500px; margin: 0 auto; font-size: 0.95rem;">This layout block is active and structured. Drop your project carousel sliders or hub facility galleries right here when ready.</p>
             </div>
         </div>
 
