@@ -9,10 +9,10 @@
     
     <style>
         :root {
-            --primary: #0070f3; /* Premium Tech Blue */
-            --dark: #0f172a;    /* Clean Dark Slate */
-            --light: #f8fafc;   /* Soft Ice White */
-            --gray: #64748b;    /* Pro Subtext Gray */
+            --dark: #0f172a;    
+            --light: #ffffff;   
+            --gray: #64748b;    
+            --border: #cccccc;
         }
 
         * {
@@ -28,15 +28,13 @@
             line-height: 1.7;
         }
 
-        /* Hero Banner with Snow Laden Ladakh Mountain Background */
+        /* Flat Rectangular Header Banner - No Background Images */
         .hero {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.75) 100%), 
-                        url('https://images.unsplash.com/photo-1626082895617-2c6de3476af7?q=80&w=1920') no-repeat center center;
-            background-size: cover;
+            background-color: var(--dark);
             color: white;
-            padding: 140px 20px;
+            padding: 120px 20px;
             text-align: center;
-            border-bottom: 4px solid var(--primary);
+            border: 1px solid var(--dark);
         }
 
         .hero h1 {
@@ -48,42 +46,32 @@
         }
 
         .hero p {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #cbd5e1;
             max-width: 700px;
             margin: 0 auto;
             font-weight: 300;
         }
 
-        /* Main Container */
+        /* Main Container with Large Visual Spacing */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 100px 20px; /* High top/bottom padding for separation */
         }
 
-        /* Corporate Intro Layout */
+        /* Strict Rectangular Content Section */
         .intro-section {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
-            align-items: center;
-            margin-bottom: 60px;
+            margin-bottom: 100px;
             background: white;
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-        }
-
-        @media (max-width: 968px) {
-            .intro-section { grid-template-columns: 1fr; gap: 30px; }
+            padding: 50px;
+            border: 2px solid var(--border); /* Plain sharp rectangular box */
         }
 
         .intro-text p {
-            margin-bottom: 18px;
-            color: #334155;
-            font-size: 1.05rem;
+            margin-bottom: 25px;
+            color: #000000;
+            font-size: 1.1rem;
             text-align: justify;
         }
 
@@ -91,193 +79,126 @@
             margin-bottom: 0;
         }
 
-        .intro-image-box {
-            width: 100%;
-            height: 100%;
-            min-height: 320px;
-            background-color: #e2e8f0;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 1px dashed var(--gray);
-        }
-
-        .intro-image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         .section-title {
             font-size: 2.2rem;
             font-weight: 700;
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
+            text-align: left;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--dark);
+            padding-bottom: 10px;
         }
 
-        /* Premium Core Operations Grid Layout */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-            margin-bottom: 60px;
+        /* Rectangular Block Row Operations */
+        .operations-list {
+            margin-bottom: 100px;
         }
 
-        .card {
+        .operation-row {
+            display: flex;
+            align-items: center;
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.03);
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background-color: var(--primary);
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        .card i {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            background: #eff6ff;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--dark);
-            line-height: 1.4;
-        }
-
-        /* Reserved Slots For Slides Layout (Zero Blank Space) */
-        .slides-container {
-            width: 100%;
-            background: #0f172a;
-            border-radius: 16px;
-            padding: 30px;
-            color: white;
-            margin-bottom: 60px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 250px;
-            text-align: center;
-            border: 1px solid #334155;
-        }
-
-        .slides-placeholder-content i {
-            font-size: 3rem;
-            color: #3b82f6;
+            padding: 25px;
+            border: 1px solid var(--border);
             margin-bottom: 15px;
         }
 
-        /* Modern Contact Form Section */
+        .operation-row i {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-right: 25px;
+            width: 40px;
+            text-align: center;
+        }
+
+        .operation-row h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Dedicated Custom Action/Slides Scope Area (Kept Empty for your own elements) */
+        .custom-scope-area {
+            margin-bottom: 100px;
+            padding: 80px 20px;
+            border: 2px dashed var(--border);
+        }
+
+        /* Sharp Bordered Contact Grid */
         .contact-section {
             background: white;
-            border-radius: 16px;
-            padding: 40px;
-            border: 1px solid #e2e8f0;
+            padding: 50px;
+            border: 2px solid var(--border);
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 60px;
         }
 
         @media (max-width: 768px) {
-            .contact-section { grid-template-columns: 1fr; }
+            .contact-section { grid-template-columns: 1fr; gap: 40px; }
         }
 
         .contact-info h2 {
             font-size: 2rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
         .info-item {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-size: 1.1rem;
         }
 
         .info-item i {
-            color: var(--primary);
-            margin-right: 15px;
-            font-size: 1.2rem;
-            width: 25px;
+            color: var(--dark);
+            margin-right: 20px;
+            font-size: 1.3rem;
         }
 
-        /* Styled Input Forms */
+        /* Box Styled Input Fields */
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
+            padding: 14px;
+            border: 1px solid var(--border);
+            border-radius: 0px; /* Sharp corners */
             font-size: 1rem;
-            background-color: var(--light);
+            background-color: #ffffff;
         }
 
         .form-control:focus {
-            outline: 2px solid var(--primary);
-            background-color: white;
+            outline: 2px solid var(--dark);
         }
 
         .btn {
-            background-color: var(--primary);
+            background-color: var(--dark);
             color: white;
-            padding: 14px 28px;
+            padding: 16px 30px;
             border: none;
-            border-radius: 6px;
+            border-radius: 0px; /* Sharp corners */
             font-weight: 600;
             cursor: pointer;
             width: 100%;
-            font-size: 1rem;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            transition: background 0.2s ease;
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #334155;
         }
     </style>
 </head>
@@ -296,50 +217,40 @@
                 <p>With a focus on sustainable development and inclusive progress, the enterprise seeks to support institutions, industries, and communities through efficient execution, collaborative engagement, and forward-thinking initiatives. By combining entrepreneurial ambition with a structured and compliant business framework, the organization is positioned to pursue opportunities across diverse sectors while maintaining the highest standards of professionalism and integrity.</p>
                 <p>Driven by the belief that meaningful growth is achieved through innovation and opportunity creation, the enterprise aims to serve as a catalyst for new ventures, economic participation, and responsible enterprise development. Through strategic partnerships, operational excellence, and a commitment to long-term value creation, it strives to contribute to a business ecosystem that encourages resilience, sustainability, and shared prosperity, creating a lasting positive impact for communities, institutions, and industry.</p>
             </div>
-            
-            <div class="intro-image-box">
-                <img src="intro-pic.jpg" alt="Mirpa Strategic Vision" onerror="this.style.display='none'; this.parentNode.innerHTML='<p style=\'color:var(--gray); padding:20px; text-align:center;\'>📸 <br> Upload an image named <b>intro-pic.jpg</b> to GitHub to display your main corporate team graphic here.</p>'">
-            </div>
         </div>
 
         <h2 class="section-title">Core Operations</h2>
-        <p style="text-align: center; color: var(--gray); margin-bottom: 20px;">Structured focus areas running across strategic regional environments.</p>
 
-        <div class="grid">
-            <div class="card">
+        <div class="operations-list">
+            <div class="operation-row">
                 <i class="fa-solid fa-boxes-packing"></i>
                 <h3>Strategic Procurement & Supply Solutions</h3>
             </div>
-            <div class="card">
+            <div class="operation-row">
                 <i class="fa-solid fa-building-shield"></i>
                 <h3>Government & Institutional Contracting Services</h3>
             </div>
-            <div class="card">
+            <div class="operation-row">
                 <i class="fa-solid fa-lightbulb"></i>
                 <h3>Enterprise Development & Opportunity Creation</h3>
             </div>
-            <div class="card">
+            <div class="operation-row">
                 <i class="fa-solid fa-handshake-angle"></i>
                 <h3>Strategic Partnerships & Business Growth Initiatives</h3>
             </div>
-            <div class="card">
+            <div class="operation-row">
                 <i class="fa-solid fa-arrows-spin"></i>
                 <h3>Sustainable & Circular Economy Ventures</h3>
             </div>
         </div>
 
-        <div class="slides-container">
-            <div class="slides-placeholder-content">
-                <i class="fa-regular fa-images"></i>
-                <h3 style="margin-bottom: 10px;">Operations Visual Showcase Slide Deck</h3>
-                <p style="color: #94a3b8; max-width: 500px; margin: 0 auto; font-size: 0.95rem;">This layout block is active and structured. Drop your project carousel sliders or hub facility galleries right here when ready.</p>
+        <div class="custom-scope-area">
             </div>
-        </div>
 
         <div class="contact-section">
             <div class="contact-info">
                 <h2>Connect With Us</h2>
-                <p style="color: var(--gray); margin-bottom: 30px;">Reach out to explore commercial partnerships, asset lifecycles, or regional hub operations.</p>
+                <p style="color: var(--gray); margin-bottom: 40px; font-size: 1.05rem;">Reach out to explore commercial partnerships, asset lifecycles, or regional hub operations.</p>
                 
                 <div class="info-item">
                     <i class="fa-solid fa-envelope"></i>
@@ -362,7 +273,7 @@
                 </div>
                 <div class="form-group">
                     <label>Message</label>
-                    <textarea name="message" rows="4" class="form-control" placeholder="How can we collaborate?" required></textarea>
+                    <textarea name="message" rows="5" class="form-control" placeholder="How can we collaborate?" required></textarea>
                 </div>
                 <button type="submit" class="btn">Send Message</button>
             </form>
