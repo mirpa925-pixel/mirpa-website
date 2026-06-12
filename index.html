@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirpa Enterprises</title>
     <style>
-        /* =========================================================
-           SAFETY SWITCH: THIS PERMANENTLY BLOCKS THE V0 BADGE
-           ========================================================= */
+        /* 1. FORCE CSS BLANKET ON ALL BADGES */
         #vercel-web-analytics, 
         .vercel-toolbar, 
         [data-v0-badge], 
@@ -15,67 +13,45 @@
         #v0-badge,
         vercel-vercel-toolbar,
         div[class*="v0-badge"],
-        [class*="v0-badge"] { 
+        [class*="v0-badge"],
+        iframe[src*="vercel"] { 
             display: none !important; 
             visibility: hidden !important; 
             opacity: 0 !important;
             pointer-events: none !important; 
+            width: 0 !important;
+            height: 0 !important;
         }
 
-        /* =========================================================
-           PREMIUM CORPORATE DARK SYSTEM THEME
-           ========================================================= */
         :root {
-            --primary: #0070f3; /* Premium Tech Blue */
-            --dark: #0f172a;    /* Clean Dark Slate */
-            --light: #f8fafc;   /* Soft Ice White */
-            --gray: #64748b;    /* Pro Subtext Gray */
+            --primary: #0070f3;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--dark);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--dark) !important;
             color: var(--light);
-            line-height: 1.6;
-            padding: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 2rem;
         }
-
         .container {
             max-width: 800px;
             width: 100%;
             background: rgba(30, 41, 59, 0.7);
             padding: 3rem;
             border-radius: 12px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
         }
-
-        h1 {
-            font-size: 2.5rem;
-            color: var(--light);
-            margin-bottom: 1rem;
-            font-weight: 700;
-            letter-spacing: -0.05em;
-        }
-
-        p {
-            color: var(--gray);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        p { color: var(--gray); font-size: 1.2rem; margin-bottom: 2rem; }
         .badge-status {
             display: inline-block;
             background: rgba(0, 112, 243, 0.2);
@@ -83,8 +59,6 @@
             padding: 0.5rem 1rem;
             border-radius: 20px;
             font-weight: 600;
-            font-size: 0.9rem;
-            border: 1px solid var(--primary);
         }
     </style>
 </head>
@@ -94,5 +68,32 @@
         <p>Circular Infrastructure Hub & Sustainable Asset Management</p>
         <span class="badge-status">System Live & Fully Secured</span>
     </div>
+
+    <script>
+        function killBadge() {
+            const targets = [
+                '#vercel-web-analytics',
+                '.vercel-toolbar',
+                '[data-v0-badge]',
+                '.v0-badge',
+                '#v0-badge',
+                'vercel-vercel-toolbar'
+            ];
+            targets.forEach(selector => {
+                document.querySelectorAll(selector).forEach(el => el.remove());
+            });
+            
+            // Catch any rogue divs containing the phrase "v0-badge"
+            document.querySelectorAll('div').forEach(div => {
+                if(div.className && typeof div.className === 'string' && div.className.includes('v0-badge')) {
+                    div.remove();
+                }
+            });
+        }
+        // Run immediately, run when loaded, and loop every 100ms just in case
+        killBadge();
+        window.addEventListener('DOMContentLoaded', killBadge);
+        setInterval(killBadge, 100);
+    </script>
 </body>
 </html>
