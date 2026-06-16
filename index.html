@@ -3,294 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mirpa Enterprises</title>
-    
-    <style>
-        #vercel-web-analytics, 
-        .vercel-toolbar, 
-        [data-v0-badge], 
-        .v0-badge, 
-        #v0-badge,
-        vercel-vercel-toolbar,
-        iframe[src*="vercel"],
-        [class*="v0-badge"],
-        div[class*="v0-badge"],
-        .vercel-toolbar-container { 
-            display: none !important; 
-            visibility: hidden !important; 
-            opacity: 0 !important;
-            pointer-events: none !important; 
-            width: 0 !important;
-            height: 0 !important;
-            position: absolute !important;
-            left: -9999px !important;
-        }
-    </style>
-
+    <title>Mirpa Enterprises | Circular Infrastructure & Sustainability</title>
     <style>
         :root {
-            --primary: #0082f3;
-            --primary-dark: #0066c7;
-            --text-dark: #0f172a;
-            --text-muted: #475569;
-            --border-light: #e2e8f0;
-            --bg-light: #ffffff;
+            --primary: #111827;      /* Sleek Dark Slate */
+            --accent: #059669;       /* Sustainable Emerald Green */
+            --text-dark: #1f2937;    /* Charcoal Text */
+            --text-muted: #4b5563;   /* Slate Gray Text */
+            --bg-light: #f9fafb;     /* Light Gray Section Background */
+            --border: #e5e7eb;       /* Clean Subtle Borders */
         }
-
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            background-color: var(--bg-light);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
-            padding-bottom: 5rem;
+            background-color: #ffffff;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Navbar Layout */
+        /* Navigation Header */
         header {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 8%;
-            border-bottom: 1px solid var(--border-light);
-            background: #fff;
         }
+
         .logo {
             font-weight: 800;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            font-size: 1.35rem;
+            color: var(--primary);
+            letter-spacing: -0.03em;
         }
-        .logo span { color: var(--primary); font-size: 1.5rem; line-height: 0; }
-        nav { display: flex; gap: 2.5rem; }
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-        .btn-contact {
-            background-color: var(--primary);
-            color: #fff;
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: background 0.2s;
-        }
-        .btn-contact:hover { background-color: var(--primary-dark); }
 
-        /* Hero Layout */
+        /* Reusable Clean Buttons */
+        .cta-btn {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 0.625rem 1.25rem;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            background-color: #1f2937;
+        }
+
+        .cta-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Hero Section */
         .hero {
-            text-align: center;
-            padding: 6rem 10% 4rem 10%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 7.5rem 2rem;
+            text-align: center;
         }
-        .tagline-top {
-            color: var(--primary);
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-        h1 {
+
+        .hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-        .hero-subtitle {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-        }
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        .btn-primary {
-            background-color: var(--primary);
-            color: #fff;
-            padding: 0.8rem 1.8rem;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border-radius: 4px;
-        }
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-dark);
-            padding: 0.8rem 1.8rem;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border: 1px solid var(--border-light);
-            border-radius: 4px;
+            color: var(--primary);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
         }
 
-        /* Sections Grid */
-        .section-container {
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem auto;
+            color: var(--text-muted);
+        }
+
+        /* Features/Services Section */
+        .features {
+            background-color: var(--bg-light);
+            padding: 6rem 2rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .grid {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 8%;
-        }
-        .section-title {
-            font-size: 0.9rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--primary);
-            margin-bottom: 2.5rem;
-            position: relative;
-            display: inline-block;
-            padding-left: 2.5rem;
-        }
-        .section-title::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 50%;
-            width: 1.5rem;
-            height: 2px;
-            background-color: var(--primary);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
-        .grid-three {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
         .card {
-            border: 1px solid var(--border-light);
-            padding: 2.5rem 2rem;
-            border-radius: 4px;
-            background: #fff;
+            background: #ffffff;
+            padding: 3rem 2.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            transition: box-shadow 0.2s ease, border-color 0.2s ease;
         }
-        .card-num {
-            font-size: 0.9rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-        .card-text {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.7;
-            text-align: justify;
+
+        .card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
 
         .card-icon {
-            color: var(--primary);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            font-weight: bold;
         }
 
-        @media (max-width: 968px) {
-            .grid-three { grid-template-columns: 1fr; }
-            h1 { font-size: 2.5rem; }
-            nav { display: none; }
+        .card h3 {
+            font-size: 1.35rem;
+            color: var(--primary);
+            margin-bottom: 0.875rem;
+            letter-spacing: -0.02em;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.975rem;
+        }
+
+        /* Clean Footer */
+        footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Optimization responsive break */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            .footer-links a {
+                margin: 0 0.75rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">MIRPA <span>■</span></div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#operations">Operations</a>
-            <a href="#connect">Connect</a>
-        </nav>
-        <a href="#connect" class="btn-contact">Get In Touch</a>
+        <div class="nav-container">
+            <div class="logo">MIRPA ENTERPRISES</div>
+            <a href="mailto:info@mirpa.in" class="cta-btn">Contact Corporate</a>
+        </div>
     </header>
 
-    <section class="hero">
-        <div class="tagline-top">Private Limited • Startup India • MSME</div>
-        <h1>Mirpa Enterprises</h1>
-        <p class="hero-subtitle">Building Sustainable, Circular Infrastructure For Tomorrow.</p>
-        <div class="hero-buttons">
-            <a href="#operations" class="btn-primary">Our Operations</a>
-            <a href="#about" class="btn-secondary">Learn More</a>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <h1>Circular Ecosystems.<br><span>Industrial Infrastructure.</span></h1>
+            <p>Deploying specialized compliance, technological engineering management, and zero-waste lifecycles for high-value resource infrastructure.</p>
+            <a href="mailto:info@mirpa.in" class="cta-btn" style="padding: 0.875rem 2rem; font-size: 1rem;">Initiate Engagement</a>
+        </section>
 
-    <section id="about" class="section-container">
-        <div class="section-title">About</div>
-        <div class="grid-three">
-            <div class="card">
-                <div class="card-num">01</div>
-                <p class="card-text">An enterprise established with the vision of creating businesses, unlocking opportunities, and driving sustainable economic growth. Incorporated as a Private Limited Company and recognized under the Startup India initiative with MSME registration, the organization is built on the principles of entrepreneurship, innovation, and responsible business practices. It is committed to identifying emerging opportunities, facilitating procurement solutions, and fostering strategic partnerships that create long-term value for stakeholders.</p>
+        <section class="features">
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">■</div>
+                    <h3>Technical Asset Life Extension</h3>
+                    <p>Component-level diagnostic frameworks and technical operations built to extend resource lifecycles and scale capital efficiency metrics.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">▲</div>
+                    <h3>Circular Infrastructure Hubs</h3>
+                    <p>Establishing localized containment environments running specialized material pipelines in strict operational and environmental compliance.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">◆</div>
+                    <h3>Secured Asset Disposition</h3>
+                    <p>High-yield resource processing architectures built for end-to-end data security and modern secondary material recovery standards.</p>
+                </div>
             </div>
-            <div class="card">
-                <div class="card-num">02</div>
-                <p class="card-text">With a focus on sustainable development and inclusive progress, the enterprise seeks to support institutions, industries, and communities through efficient execution, collaborative engagement, and forward-thinking initiatives. By combining entrepreneurial ambition with a structured and compliant business framework, the organization is positioned to pursue opportunities across diverse sectors while maintaining the highest standards of professionalism and integrity.</p>
-            </div>
-            <div class="card">
-                <div class="card-num">03</div>
-                <p class="card-text">Driven by the belief that meaningful growth is achieved through innovation and opportunity creation, the enterprise aims to serve as a catalyst for new ventures, economic participation, and responsible enterprise development. Through strategic partnerships, operational excellence, and a commitment to long-term value creation, it strives to contribute to a business ecosystem that encourages resilience, sustainability, and shared prosperity, creating a lasting positive impact for communities, institutions, and industry.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="operations" class="section-container">
-        <div class="section-title">Core Operations</div>
-        <div class="grid-three">
-            <div class="card">
-                <div class="card-icon">⚙️</div>
-                <div class="card-title">Strategic Procurement & Supply Solutions</div>
-                <div class="card-num">01 / 05</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">🏛️</div>
-                <div class="card-title">Government & Institutional Contracting Services</div>
-                <div class="card-num">02 / 05</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">💡</div>
-                <div class="card-title">Enterprise Development & Opportunity Creation</div>
-                <div class="card-num">03 / 05</div>
-            </div>
+    <footer>
+        <div>&copy; 2026 Mirpa Enterprises Private Limited. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="mailto:info@mirpa.in">info@mirpa.in</a>
         </div>
-    </section>
+    </footer>
 
-    <script>
-        (function() {
-            const elNames = ['#vercel-web-analytics', '.vercel-toolbar', '[data-v0-badge]', '.v0-badge', '#v0-badge', 'vercel-vercel-toolbar', '.vercel-toolbar-container'];
-            function dropBadge() {
-                elNames.forEach(s => document.querySelectorAll(s).forEach(e => e.remove()));
-                document.querySelectorAll('div').forEach(d => {
-                    if (d.className && typeof d.className === 'string' && d.className.includes('v0-badge')) d.remove();
-                });
-            }
-            const observer = new MutationObserver(() => dropBadge());
-            observer.observe(document.documentElement, { childList: true, subtree: true });
-            dropBadge();
-            window.addEventListener('DOMContentLoaded', dropBadge);
-            window.addEventListener('load', dropBadge);
-            setInterval(dropBadge, 30);
-        })();
-    </script>
 </body>
 </html>
