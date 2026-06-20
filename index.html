@@ -60,7 +60,6 @@
             fill: var(--teal-dark);
         }
 
-        /* Replaced overlapping dead text links with one functional professional action button */
         .btn-contact {
             background: var(--teal-dark);
             color: white !important;
@@ -77,7 +76,7 @@
             background: #1d5253;
         }
 
-        /* Mountain Banner */
+        /* Mountain Banner with Refined Sub-Tagline */
         .mountain-banner {
             background: linear-gradient(to bottom, #bbdefb 0%, #edf7ff 100%);
             position: relative;
@@ -92,6 +91,17 @@
             color: var(--teal-dark);
             text-transform: uppercase;
             letter-spacing: 0.04em;
+            position: relative;
+            z-index: 5;
+            margin-bottom: 0.5rem;
+        }
+
+        .sub-tagline {
+            font-size: 1.15rem;
+            color: var(--slate);
+            font-weight: 600;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
             position: relative;
             z-index: 5;
         }
@@ -130,7 +140,7 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            min-height: 550px;
+            min-height: 560px;
         }
 
         .card-header-box {
@@ -218,7 +228,6 @@
             font-weight: 600;
         }
 
-        /* Fixed Footer Bug - Clear Spacing and Clean Wrapping */
         footer {
             background: var(--footer-dark);
             color: white;
@@ -232,21 +241,11 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-
-        .footer-info strong {
-            font-size: 1.05rem;
+            gap: 1.5rem;
         }
 
         .footer-info p {
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             color: #cbd5e0;
         }
 
@@ -259,7 +258,7 @@
         .dpiit-badge {
             background: white;
             color: black;
-            padding: 0.4rem 1.2rem;
+            padding: 0.4rem 1rem;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 700;
@@ -283,6 +282,7 @@
         @media (max-width: 768px) {
             .columns-container { grid-template-columns: 1fr; }
             .slogan { font-size: 1.6rem; }
+            .sub-tagline { font-size: 1rem; }
             .footer-container { flex-direction: column; text-align: center; }
         }
     </style>
@@ -297,13 +297,13 @@
                 </svg>
                 MIRPA ENTERPRISES
             </div>
-            <!-- Cleaned up unclickable links and replaced with a single working action button -->
             <a href="mailto:info@mirpa.in" class="btn-contact">Contact Us</a>
         </div>
     </header>
 
     <div class="mountain-banner">
         <h1 class="slogan">Ascending towards a circular future.</h1>
+        <p class="sub-tagline">Engineering sustainable technical networks and circular asset infrastructure for high-altitude ecosystems.</p>
         
         <svg class="mountain-svg-bg" viewBox="0 0 1440 150" preserveAspectRatio="none">
             <path d="M0,150 L300,40 L600,110 L950,20 L1200,90 L1440,150 Z" fill="#90caf9" opacity="0.3"/>
@@ -319,7 +319,7 @@
             <div class="roadmap-card">
                 <div class="card-header-box">
                     <div class="icon-number">01</div>
-                    <h3>Procurement & GeM Ecosystem</h3>
+                    <h3>Infrastructure Procurement & GeM Bidding</h3>
                 </div>
                 <div class="graphic-container">
                     <div class="graphic-icon-box">📋</div>
@@ -329,31 +329,31 @@
                     <li><strong>The Blueprint:</strong> High-volume supply architectures for Government e-Marketplace procurement loops.</li>
                     <li><strong>The Vision:</strong> Actively scaling logistical infrastructure to bid on high-stakes public sector tenders.</li>
                 </ul>
-                <div class="illustration-note">📦 Government supply pipelines</div>
+                <div class="illustration-note">🔌 Public Sector Infrastructure Pipelines</div>
             </div>
 
             <!-- Column 2 -->
             <div class="roadmap-card">
                 <div class="card-header-box">
                     <div class="icon-number">02</div>
-                    <h3>Enterprise IT Distribution</h3>
+                    <h3>Enterprise Technology Distribution</h3>
                 </div>
                 <div class="graphic-container">
                     <div class="graphic-icon-box">💻</div>
-                    <div class="graphic-label">Brand Intermediary Hub</div>
+                    <div class="graphic-label">Advanced Systems & Networks</div>
                 </div>
                 <ul class="bullet-list">
                     <li><strong>The Blueprint:</strong> Strategic corporate intermediary channeling hardware from global technology brands.</li>
                     <li><strong>The Vision:</strong> Bridging the manufacturing loop directly with enterprise peripheral demands.</li>
                 </ul>
-                <div class="illustration-note">🔌 Enterprise server networking</div>
+                <div class="illustration-note">💻 Advanced Systems & Enterprise Networking</div>
             </div>
 
             <!-- Column 3 -->
             <div class="roadmap-card">
                 <div class="card-header-box">
                     <div class="icon-number">03</div>
-                    <h3>Ladakh Circular Hub</h3>
+                    <h3>High-Altitude Circular Hub</h3>
                 </div>
                 <div class="graphic-container">
                     <div class="graphic-icon-box">♻️</div>
@@ -370,34 +370,34 @@
             <div class="roadmap-card">
                 <div class="card-header-box">
                     <div class="icon-number">04</div>
-                    <h3>Asset Recovery & Reclamation</h3>
+                    <h3>Asset Diagnostics & Engineering Reclamation</h3>
                 </div>
                 <div class="graphic-container">
                     <div class="graphic-icon-box">⚙️</div>
-                    <div class="graphic-label">Hardware Decommissioning</div>
+                    <div class="graphic-label">Component Life-Extension</div>
                 </div>
                 <ul class="bullet-list">
                     <li><strong>The Blueprint:</strong> Systematic breakdown, component diagnostic testing, and sorting pipelines for out-of-service gear.</li>
                     <li><strong>The Vision:</strong> Transforming end-of-life capital equipment into useful, high-yield secondary resources.</li>
                 </ul>
-                <div class="illustration-note">🛠️ Circular materials recovery</div>
+                <div class="illustration-note">🛠️ Component-Level Diagnostics & Life-Extension</div>
             </div>
 
             <!-- Column 5 -->
             <div class="roadmap-card">
                 <div class="card-header-box">
                     <div class="icon-number">05</div>
-                    <h3>Greenfield Sustainability</h3>
+                    <h3>Sustainable Civil & Eco-Asset Development</h3>
                 </div>
                 <div class="graphic-container">
                     <div class="graphic-icon-box">🌱</div>
-                    <div class="graphic-label">Eco-Asset Development</div>
+                    <div class="graphic-label">Structural Footprints</div>
                 </div>
                 <ul class="bullet-list">
                     <li><strong>The Blueprint:</strong> Directing engineering structures and investment towards completely new infrastructure fields.</li>
                     <li><strong>The Vision:</strong> Deploying zero-emission installations to secure low-carbon footprints right from day one.</li>
                 </ul>
-                <div class="illustration-note">🌲 Zero-impact structural footprint</div>
+                <div class="illustration-note">🌲 Sustainable Engineering & Structural Footprints</div>
             </div>
 
         </div>
