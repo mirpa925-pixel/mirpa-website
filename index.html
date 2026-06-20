@@ -18,13 +18,13 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         body {
             background-color: var(--sky-bg);
             color: var(--slate);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         header {
@@ -48,138 +48,163 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: var(--teal-dark);
             letter-spacing: -0.02em;
         }
 
         .logo-mountain {
-            width: 30px;
-            height: 24px;
+            width: 28px;
+            height: 22px;
             fill: var(--teal-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem; 
         }
 
         .nav-links a {
             color: var(--slate);
             text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-        }
-
-        .btn-signup {
-            background: var(--teal-dark);
-            color: white !important;
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
+            font-weight: 600;
             font-size: 0.9rem;
         }
 
-        /* Mountain Graphic Banner */
+        /* Mountain Banner */
         .mountain-banner {
             background: linear-gradient(to bottom, #bbdefb 0%, #edf7ff 100%);
             position: relative;
-            padding: 4rem 2rem 8rem 2rem;
+            padding: 5rem 2rem 10rem 2rem;
             text-align: center;
             overflow: hidden;
         }
 
         .slogan {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2.6rem;
+            font-weight: 900;
             color: var(--teal-dark);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 3rem;
+            letter-spacing: 0.04em;
             position: relative;
             z-index: 5;
         }
 
-        /* Pure CSS SVG Mountain vector graphic overlay */
         .mountain-svg-bg {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 150px;
+            height: 160px;
             z-index: 1;
             pointer-events: none;
         }
 
         .main-content {
             max-width: 1440px;
-            margin: -5rem auto 4rem auto;
+            margin: -6rem auto 4rem auto;
             padding: 0 1.5rem;
             position: relative;
             z-index: 10;
         }
 
-        /* 5 Column Layout matching image */
         .columns-container {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 1.25rem;
+            gap: 1rem;
             align-items: start;
         }
 
         .roadmap-card {
             background: var(--card-bg);
-            border-radius: 14px;
-            padding: 1.5rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border: 1px solid rgba(44, 122, 123, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem 1.25rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+            border: 1px solid rgba(44, 122, 123, 0.08);
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            min-height: 520px;
+            min-height: 550px;
         }
 
         .card-header-box {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 8px;
         }
 
         .icon-number {
-            font-size: 1.5rem;
-            font-weight: 800;
+            font-size: 1.3rem;
+            font-weight: 900;
             color: var(--teal-light);
-            line-height: 1.1;
+            line-height: 1;
         }
 
         .roadmap-card h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: black;
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #1a202c;
             line-height: 1.3;
         }
 
-        /* Graphic Visual representation filler box simulating charts/icons */
-        .graphic-placeholder {
-            background: #f0f7f7;
-            border: 1px dashed var(--teal-light);
+        /* Enhanced Graphic Elements for Visuals */
+        .graphic-container {
+            background: #f7fafc;
+            border: 2px dashed #cbd5e0;
             border-radius: 8px;
-            height: 90px;
+            height: 120px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
+            gap: 8px;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        .graphic-icon-box {
+            font-size: 1.8rem;
+        }
+
+        .graphic-label {
+            font-size: 0.7rem;
             color: var(--teal-dark);
-            font-weight: bold;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
-        .content-block h4 {
-            font-size: 0.95rem;
-            color: black;
-            margin-bottom: 0.2rem;
+        /* Streamlined Bullet Lists */
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
         }
 
-        .content-block p {
-            font-size: 0.85rem;
+        .bullet-list li {
+            font-size: 0.82rem;
             color: var(--slate);
-            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            color: var(--teal-light);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: -2px;
+            font-size: 1.1rem;
+        }
+
+        .bullet-list strong {
+            color: #1a202c;
+            display: block;
+            margin-bottom: 0.1rem;
         }
 
         .illustration-note {
@@ -191,7 +216,7 @@
             font-weight: 600;
         }
 
-        /* Footer section */
+        /* Footer Alignment */
         footer {
             background: var(--footer-dark);
             color: white;
@@ -209,8 +234,14 @@
         }
 
         .footer-info p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #cbd5e0;
+        }
+
+        .footer-info a {
+            color: #4db6ac;
+            text-decoration: none;
+            font-weight: 600;
         }
 
         .dpiit-badge {
@@ -218,12 +249,11 @@
             color: black;
             padding: 0.4rem 1rem;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .dpiit-dot {
@@ -234,17 +264,14 @@
         }
 
         @media (max-width: 1200px) {
-            .columns-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .columns-container { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
         }
 
-        @media (max-width: 680px) {
-            .columns-container {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 768px) {
+            .columns-container { grid-template-columns: 1fr; }
             .nav-links { display: none; }
             .slogan { font-size: 1.6rem; }
+            .footer-container { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -263,7 +290,6 @@
                 <a href="#">About Us</a>
                 <a href="#">Strategic Roadmap</a>
                 <a href="#">Contact</a>
-                <a href="#" class="btn-signup">Sign Up</a>
             </nav>
         </div>
     </header>
@@ -271,7 +297,6 @@
     <div class="mountain-banner">
         <h1 class="slogan">Ascending towards a circular future.</h1>
         
-        <!-- Mountain graphic layer vectors built into background -->
         <svg class="mountain-svg-bg" viewBox="0 0 1440 150" preserveAspectRatio="none">
             <path d="M0,150 L300,40 L600,110 L950,20 L1200,90 L1440,150 Z" fill="#90caf9" opacity="0.3"/>
             <path d="M0,150 L200,70 L500,130 L800,50 L1150,110 L1440,150 Z" fill="#64b5f6" opacity="0.4"/>
@@ -286,80 +311,85 @@
             <div class="roadmap-card">
                 <div class="card-header-box">
                     <div class="icon-number">01</div>
-                    <h3>Procurement Partnerships & GeM Ecosystem Integration</h3>
+                    <h3>Procurement & GeM Ecosystem</h3>
                 </div>
-                <div class="graphic-placeholder">GeM Pipeline System</div>
-                <div class="content-block">
-                    <h4>The Blueprint:</h4>
-                    <p>Establishing a robust, high-volume supply framework geared entirely toward the Government e-Marketplace (GeM) and institutional procurement channels.</p>
-                    <h4>The Vision:</h4>
-                    <p>We are actively structuring our operations to participate in high-stakes public sector tenders, providing reliable, compliant logistics for goods of all classifications.</p>
+                <div class="graphic-container">
+                    <div class="graphic-icon-box">📋</div>
+                    <div class="graphic-label">GeM Tenders & Logistics</div>
                 </div>
-                <div class="illustration-note">📦 Flowing logistics pipelines to government buildings</div>
+                <ul class="bullet-list">
+                    <li><strong>The Blueprint:</strong> High-volume supply architectures for Government e-Marketplace procurement loops.</li>
+                    <li><strong>The Vision:</strong> Actively scaling logistical infrastructure to bid on high-stakes public sector tenders.</li>
+                </ul>
+                <div class="illustration-note">📦 Government supply pipelines</div>
             </div>
 
             <!-- Column 2 -->
             <div class="roadmap-card">
                 <div class="card-header-box">
                     <div class="icon-number">02</div>
-                    <h3>Enterprise IT & Computer Peripheral Distribution</h3>
+                    <h3>Enterprise IT Distribution</h3>
                 </div>
-                <div class="graphic-placeholder">IT Distribution Hub</div>
-                <div class="content-block">
-                    <h4>The Blueprint:</h4>
-                    <p>Serving as a strategic market intermediary by forging supply channels with prominent, global technology brands.</p>
-                    <h4>The Vision:</h4>
-                    <p>Delivering top-tier IT hardware and computer peripherals to corporate networks, bridging the gap between major manufacturing innovators and localized commercial demand.</p>
+                <div class="graphic-container">
+                    <div class="graphic-icon-box">💻</div>
+                    <div class="graphic-label">Brand Intermediary Hub</div>
                 </div>
-                <div class="illustration-note">💻 Servers and connecting tier systems</div>
+                <ul class="bullet-list">
+                    <li><strong>The Blueprint:</strong> Strategic corporate intermediary channeling hardware from global technology brands.</li>
+                    <li><strong>The Vision:</strong> Bridging the manufacturing loop directly with enterprise peripheral demands.</li>
+                </ul>
+                <div class="illustration-note">🔌 Enterprise server networking</div>
             </div>
 
             <!-- Column 3 -->
             <div class="roadmap-card">
                 <div class="card-header-box">
                     <div class="icon-number">03</div>
-                    <h3>The Ladakh Circular Infrastructure Hub</h3>
+                    <h3>Ladakh Circular Hub</h3>
                 </div>
-                <div class="graphic-placeholder">Ladakh Circular Loop</div>
-                <div class="content-block">
-                    <h4>The Blueprint:</h4>
-                    <p>Launching dedicated, localized ventures engineered specifically to pilot a self-sustaining Circular Economy framework within the unique terrain of the Ladakh region.</p>
-                    <h4>The Vision:</h4>
-                    <p>Establishing regional loops for asset life extension, reducing linear resource dependence, and proving that remote, sensitive highlands can host thriving industrial models.</p>
+                <div class="graphic-container">
+                    <div class="graphic-icon-box">♻️</div>
+                    <div class="graphic-label">Regional Resource Loops</div>
                 </div>
-                <div class="illustration-note">♻️ Clean closed loops to reuse resources</div>
+                <ul class="bullet-list">
+                    <li><strong>The Blueprint:</strong> Dedicated ventures piloting sustainable circular economy frameworks in high-altitude terrain.</li>
+                    <li><strong>The Vision:</strong> Establishing regional asset life extension systems to limit linear resource use.</li>
+                </ul>
+                <div class="illustration-note">🏔️ High-altitude clean operations</div>
             </div>
 
             <!-- Column 4 -->
             <div class="roadmap-card">
                 <div class="card-header-box">
                     <div class="icon-number">04</div>
-                    <h3>End-of-Life Asset Recovery & Reclamation</h3>
+                    <h3>Asset Recovery & Reclamation</h3>
                 </div>
-                <div class="graphic-placeholder">Reclamation Process</div>
-                <div class="content-block">
-                    <h4>The Blueprint:</h4>
-                    <p>Deploying systematic processing pipelines targeting the breakdown, validation, and recycling of decommissioned and out-of-service hardware assets.</p>
-                    <h4>The Vision:</h4>
-                    <p>Diverting electronics and capital equipment away from landfills. Through rigorous reclamation, we turn damaged materials back into secondary supply resources.</p>
+                <div class="graphic-container">
+                    <div class="graphic-icon-box">⚙️</div>
+                    <div class="graphic-label">Hardware Decommissioning</div>
                 </div>
-                <div class="illustration-note">⚙️ Systematic electronic sorting models</div>
+                <ul class="bullet-list">
+                    <li><strong>The Blueprint:</strong> Systematic breakdown, component diagnostic testing, and sorting pipelines for out-of-service gear.</li>
+                    <li><strong>The Vision:</strong> Transforming end-of-life capital equipment into useful, high-yield secondary resources.</li>
+                </ul>
+                <div class="illustration-note">🛠️ Circular materials recovery</div>
             </div>
 
             <!-- Column 5 -->
             <div class="roadmap-card">
                 <div class="card-header-box">
                     <div class="icon-number">05</div>
-                    <h3>Greenfield Sustainability Initiatives</h3>
+                    <h3>Greenfield Sustainability</h3>
                 </div>
-                <div class="graphic-placeholder">Greenfield Framework</div>
-                <div class="content-block">
-                    <h4>The Blueprint:</h4>
-                    <p>Pushing structural development capital and engineering frameworks toward completely new, environmentally sound Greenfield Projects.</p>
-                    <h4>The Vision:</h4>
-                    <p>Building tomorrow's infrastructure from scratch with eco-preservation at its core. From zero-emission material installations to sustainable sites, we ensure clean footprints.</p>
+                <div class="graphic-container">
+                    <div class="graphic-icon-box">🌱</div>
+                    <div class="graphic-label">Eco-Asset Development</div>
                 </div>
-                <div class="illustration-note">🌱 Construction with minimal footprint impact</div>
+                <ul class="bullet-list">
+                    <li><strong>The Blueprint:</strong> Directing engineering structures and investment towards completely new infrastructure fields.</li>
+                    <li><strong>The Vision:</strong> Deploying zero-emission installations to secure low-carbon footprints right from day one.</li>
+                </ul>
+                <div class="illustration-note">🌲 Zero-impact structural footprint</div>
             </div>
 
         </div>
@@ -369,7 +399,7 @@
         <div class="footer-container">
             <div class="footer-info">
                 <strong>Mirpa Enterprises Private Limited</strong>
-                <p>Contact: info@mirpa.in | Support Ops Desk</p>
+                <p>Contact Desk: <a href="mailto:info@mirpa.in">info@mirpa.in</a> • Support & Operations</p>
             </div>
             <div class="dpiit-badge">
                 <div class="dpiit-dot"></div>
