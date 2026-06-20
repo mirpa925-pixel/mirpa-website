@@ -60,17 +60,21 @@
             fill: var(--teal-dark);
         }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem; 
+        /* Replaced overlapping dead text links with one functional professional action button */
+        .btn-contact {
+            background: var(--teal-dark);
+            color: white !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s;
+            box-shadow: 0 2px 5px rgba(44, 122, 123, 0.2);
         }
 
-        .nav-links a {
-            color: var(--slate);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
+        .btn-contact:hover {
+            background: #1d5253;
         }
 
         /* Mountain Banner */
@@ -149,7 +153,6 @@
             line-height: 1.3;
         }
 
-        /* Enhanced Graphic Elements for Visuals */
         .graphic-container {
             background: #f7fafc;
             border: 2px dashed #cbd5e0;
@@ -176,7 +179,6 @@
             letter-spacing: 0.05em;
         }
 
-        /* Streamlined Bullet Lists */
         .bullet-list {
             list-style: none;
             display: flex;
@@ -216,7 +218,7 @@
             font-weight: 600;
         }
 
-        /* Footer Alignment */
+        /* Fixed Footer Bug - Clear Spacing and Clean Wrapping */
         footer {
             background: var(--footer-dark);
             color: white;
@@ -230,11 +232,21 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 2rem;
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .footer-info strong {
+            font-size: 1.05rem;
         }
 
         .footer-info p {
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: #cbd5e0;
         }
 
@@ -247,13 +259,14 @@
         .dpiit-badge {
             background: white;
             color: black;
-            padding: 0.4rem 1rem;
+            padding: 0.4rem 1.2rem;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .dpiit-dot {
@@ -269,7 +282,6 @@
 
         @media (max-width: 768px) {
             .columns-container { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
             .slogan { font-size: 1.6rem; }
             .footer-container { flex-direction: column; text-align: center; }
         }
@@ -285,12 +297,8 @@
                 </svg>
                 MIRPA ENTERPRISES
             </div>
-            <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Strategic Roadmap</a>
-                <a href="#">Contact</a>
-            </nav>
+            <!-- Cleaned up unclickable links and replaced with a single working action button -->
+            <a href="mailto:info@mirpa.in" class="btn-contact">Contact Us</a>
         </div>
     </header>
 
