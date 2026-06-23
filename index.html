@@ -3,99 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mirpa Enterprises Private Limited</title>
+    <title>Mirpa Enterprises</title>
     <style>
-        :root {
-            --primary: #1e3a8a;
-            --secondary: #0d9488;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --accent: #f59e0b;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
-        header { background: linear-gradient(135deg, var(--primary), #1e40af); color: white; padding: 4rem 2rem; text-align: center; position: relative; }
-        .badge-container { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-        .badge { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 0.5rem; }
-        .badge.gem { background: var(--accent); color: var(--dark); border: none; }
-        header h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
-        header p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-4px); }
-        .card h3 { color: var(--primary); font-size: 1.4rem; margin-bottom: 1rem; }
-        .section-title { text-align: center; font-size: 2rem; color: var(--dark); margin-bottom: 1rem; font-weight: 700; }
-        .section-subtitle { text-align: center; color: #64748b; max-width: 600px; margin: 0 auto 3rem auto; }
-        .about-section { background: white; border-radius: 16px; padding: 3rem; margin-bottom: 4rem; border: 1px solid #e2e8f0; }
-        .meta-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; background: var(--light); padding: 1.5rem; border-radius: 8px; }
-        .meta-item strong { display: block; color: #64748b; font-size: 0.85rem; text-transform: uppercase; }
-        .meta-item span { color: var(--dark); font-weight: 600; font-size: 1rem; }
-        footer { background: var(--dark); color: #94a3b8; text-align: center; padding: 3rem 2rem; font-size: 0.9rem; border-top: 4px solid var(--secondary); }
-        footer p { margin-bottom: 0.5rem; }
-        footer strong { color: white; }
-        @media (max-width: 768px) { header h1 { font-size: 2rem; } .container { padding: 2rem 1rem; } }
+        /* Base Reset & Colors */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #334155; bg-color: #f8fafc; }
+        
+        /* Layout Layouts */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background-color: #0f172a; color: #ffffff; padding: 20px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.25rem; font-weight: bold; letter-spacing: 1px; }
+        nav a { color: #cbd5e1; text-decoration: none; margin-left: 20px; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        nav a:hover { color: #ffffff; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; padding: 80px 0; text-align: center; }
+        .badge { display: inline-block; background-color: rgba(245, 158, 11, 0.15); color: #fbbf24; padding: 6px 16px; rounded-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: 20px; margin-bottom: 20px; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; tracking-tight: -0.5px; }
+        .hero p { font-size: 1.15rem; color: #94a3b8; max-width: 700px; margin: 0 auto 30px auto; }
+        .btn { display: inline-block; background-color: #f59e0b; color: #0f172a; padding: 12px 24px; text-decoration: none; font-weight: 600; border-radius: 6px; transition: background 0.2s; }
+        .btn:hover { background-color: #d97706; }
+
+        /* Overview Block */
+        .overview { padding: 60px 0; text-align: center; background-color: #ffffff; }
+        .overview h2 { font-size: 1.75rem; color: #0f172a; margin-bottom: 15px; }
+        .overview p { max-width: 800px; margin: 0 auto; color: #475569; font-size: 1.1rem; }
+
+        /* Framework / Grid Section */
+        .framework-section { padding: 80px 0; background-color: #f1f5f9; }
+        .section-title { text-align: center; font-size: 2rem; color: #0f172a; margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 4px solid #0f172a; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-icon { font-size: 2rem; margin-bottom: 15px; }
+        .card h3 { font-size: 1.2rem; color: #0f172a; margin-bottom: 12px; }
+        .card p { font-size: 0.9rem; color: #475569; margin-bottom: 10px; }
+        .card-tag { margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase; }
+
+        /* Contact Section */
+        .contact-section { padding: 80px 0; background-color: #ffffff; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; }
+        @media(max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } }
+        .info-pane h2 { font-size: 2rem; color: #0f172a; margin-bottom: 15px; }
+        .info-pane p { color: #475569; margin-bottom: 30px; }
+        .meta-details { font-size: 0.9rem; color: #334155; }
+        .meta-details p { margin-bottom: 10px; }
+        
+        /* Simple Form Styles */
+        .form-box { background-color: #f8fafc; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #475569; margin-bottom: 8px; }
+        .form-group input, .form-group textarea { w-index: 100; width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem; background-color: #ffffff; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #0f172a; }
+        .form-submit { width: 100%; background-color: #0f172a; color: #ffffff; padding: 14px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .form-submit:hover { background-color: #1e293b; }
+
+        /* Footer */
+        footer { background-color: #0f172a; color: #94a3b8; padding: 40px 0; font-size: 0.85rem; border-top: 1px solid #1e293b; }
+        .footer-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-brand h4 { color: #ffffff; font-size: 1.1rem; margin-bottom: 4px; }
     </style>
 </head>
 <body>
 
+    <!-- Header Navigation -->
     <header>
-        <div class="badge-container">
-            <span class="badge">DPIIT Recognized Startup</span>
-            <span class="badge gem">Registered GeM Seller</span>
+        <div class="container header-flex">
+            <div class="logo">MIRPA ENTERPRISES</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#framework">Framework</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
-        <h1>MIRPA ENTERPRISES PVT. LTD.</h1>
-        <p>Driving growth and infrastructural transformation through innovative supply network strategies and elite business fulfillment scales.</p>
     </header>
 
-    <div class="container">
-        <section class="about-section">
-            <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Corporate Overview</h2>
-            <p style="font-size: 1.1rem; color: #475569; margin-bottom: 1.5rem;">
-                Incorporated under the Companies Act, 2013, Mirpa Enterprises Private Limited is a forward-thinking entity committed to excellence in strategic sourcing, industrial supply chains, and public procurement. Operating actively via the Government e-Marketplace (GeM Portal), we empower government agencies and commercial markets with robust product delivery channels across the Ladakh region and beyond.
-            </p>
-            
-            <div class="meta-list">
-                <div class="meta-item">
-                    <strong>CIN</strong>
-                    <span>U42909JK2025PTC018084</span>
-                </div>
-                <div class="meta-item">
-                    <strong>GSTIN</strong>
-                    <span>38AATCM9957A1ZS</span>
-                </div>
-                <div class="meta-item">
-                    <strong>Industry Segment</strong>
-                    <span>Construction, Infrastructure & Core Procurement Supplies</span>
-                </div>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <span class="badge">DPIIT Registered Company</span>
+            <h1>Ascending towards a circular future.</h1>
+            <p>Engineering sustainable technical networks and circular asset infrastructure for high-altitude ecosystems.</p>
+            <a href="#framework" class="btn">Explore Our Operations</a>
+        </div>
+    </section>
 
-        <section>
-            <h2 class="section-title">Core Competencies</h2>
-            <p class="section-subtitle">Delivering high-grade strategic solutions designed to simplify procurement bottlenecks.</p>
+    <!-- Brief Overview Section -->
+    <section id="about" class="overview">
+        <div class="container">
+            <h2>Our Core Objective</h2>
+            <p>Mirpa Enterprises Private Limited bridges industrial capability with environmental longevity. We build structured resource frameworks designed to scale logistics safely, preserve natural high-altitude landscapes, and maximize technology lifecycles.</p>
+        </div>
+    </section>
+
+    <!-- Framework Section -->
+    <section id="framework" class="framework-section">
+        <div class="container">
+            <h2 class="section-title">Operational Framework & Capabilities</h2>
             
             <div class="grid">
+                <!-- Card 1 -->
                 <div class="card">
-                    <h3>GeM Portal Supply Operations</h3>
-                    <p style="color: #475569;">Fully certified and optimized for comprehensive bidding, direct orders, and premium product fulfillment on the Government e-Marketplace.</p>
+                    <div>
+                        <div class="card-icon">📋</div>
+                        <h3>01. Infrastructure Procurement & Institutional Bidding</h3>
+                        <p><strong>The Blueprint:</strong> High-volume supply frameworks tailored for major public and institutional procurement channels.</p>
+                        <p><strong>The Vision:</strong> Actively scaling logistical capacity to securely execute critical public sector contracts.</p>
+                    </div>
+                    <div class="card-tag">Public Sector Infrastructure Pipelines</div>
                 </div>
+
+                <!-- Card 2 -->
                 <div class="card">
-                    <h3>Regional Logistics Command</h3>
-                    <p style="color: #475569;">Specialized localized supply capabilities adapted to navigate complex logistical requirements across difficult terrains smoothly.</p>
+                    <div>
+                        <div class="card-icon">💻</div>
+                        <h3>02. Enterprise Technology Distribution</h3>
+                        <p><strong>The Blueprint:</strong> Strategic corporate intermediary channeling hardware from global technology brands.</p>
+                        <p><strong>The Vision:</strong> Bridging the manufacturing loop directly with enterprise peripheral demands.</p>
+                    </div>
+                    <div class="card-tag">Advanced Systems & Enterprise Networking</div>
                 </div>
+
+                <!-- Card 3 -->
                 <div class="card">
-                    <h3>Infrastructure Support</h3>
-                    <p style="color: #475569;">Sourcing and providing engineering-grade materials, physical hardware assets, and customized equipment frameworks.</p>
+                    <div>
+                        <div class="card-icon">♻️</div>
+                        <h3>03. High-Altitude Circular Hub</h3>
+                        <p><strong>The Blueprint:</strong> Dedicated ventures piloting sustainable circular economy frameworks in high-altitude terrain.</p>
+                        <p><strong>The Vision:</strong> Establishing regional asset life extension systems to limit linear resource use.</p>
+                    </div>
+                    <div class="card-tag">High-altitude clean operations</div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div>
+                        <div class="card-icon">⚙️</div>
+                        <h3>04. Asset Diagnostics & Engineering Reclamation</h3>
+                        <p><strong>The Blueprint:</strong> Systematic breakdown, component diagnostic testing, and sorting pipelines for out-of-service gear.</p>
+                        <p><strong>The Vision:</strong> Transforming end-of-life capital equipment into useful, high-yield secondary resources.</p>
+                    </div>
+                    <div class="card-tag">Component-Level Diagnostics & Life-Extension</div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card">
+                    <div>
+                        <div class="card-icon">🌱</div>
+                        <h3>05. Sustainable Civil & Eco-Asset Development</h3>
+                        <p><strong>The Blueprint:</strong> Directing engineering structures and investment towards completely new infrastructure fields.</p>
+                        <p><strong>The Vision:</strong> Deploying zero-emission installations to secure low-carbon footprints right from day one.</p>
+                    </div>
+                    <div class="card-tag">Sustainable Engineering & Structural Footprints</div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-grid">
+            <div class="info-pane">
+                <h2>Contact Us</h2>
+                <p>Connect with our administrative desk to discuss institutional bidding, partnerships, or logistical updates.</p>
+                <div class="meta-details">
+                    <p><strong>Mirpa Enterprises Private Limited</strong></p>
+                    <p>📍 Support & Operations Desk, Ladakh Region, India</p>
+                    <p>✉️ <a href="mailto:info@mirpa.in" style="color: #f59e0b; text-decoration: underline;">info@mirpa.in</a></p>
+                </div>
+            </div>
+
+            <div class="form-box">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message logged successfully.');">
+                    <div class="form-group">
+                        <label>Name / Organization</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Corporate Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Detailed Scope Statement</label>
+                        <textarea rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Submit Framework Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p><strong>Mirpa Enterprises Private Limited</strong></p>
-        <p>H. No. 104, Haytoo, Goma, Kargil, Jammu & Kashmir – 194103</p>
-        <p style="margin-top: 1.5rem; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Mirpa Enterprises Pvt. Ltd. All Rights Reserved.</p>
+        <div class="container footer-flex">
+            <div class="footer-brand">
+                <h4>MIRPA ENTERPRISES</h4>
+                <p>DPIIT Registered Company • Support & Operations</p>
+            </div>
+            <div>
+                <p>&copy; 2026 Mirpa Enterprises Private Limited. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
 </body>
