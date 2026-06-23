@@ -1,169 +1,255 @@
-<!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Mirpa Enterprises</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirpa Enterprises | Circular Infrastructure & Sustainability</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        ladakh: {
+                            sky: '#E0F2FE',
+                            deepsky: '#0284C7',
+                            orange: '#F97316',
+                            earth: '#78350F',
+                            clay: '#B45309',
+                            moss: '#15803D',
+                            stone: '#F8FAFC',
+                            darkstone: '#0F172A'
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-delayed': 'float 12s ease-in-out infinite 2s',
+                        'fade-in': 'fadeIn 1.5s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.02); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .topo-bg {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#78350f 0.5px, transparent 0.5px), radial-gradient(#0284c7 0.5px, #f8fafc 0.5px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            opacity: 0.03;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-ladakh-stone text-slate-800 font-sans antialiased overflow-x-hidden">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-card border-b border-slate-200/50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-serif text-2xl font-bold tracking-tight text-ladakh-darkstone">
+                MIRPA<span class="text-ladakh-orange">.</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-600">
+                <a href="#framework" class="hover:text-ladakh-deepsky transition-colors">Our Framework</a>
+                <a href="#capabilities" class="hover:text-ladakh-deepsky transition-colors">Core Capabilities</a>
+                <a href="#contact" class="px-4 py-2 bg-gradient-to-r from-ladakh-earth to-ladakh-clay text-white rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">Contact Desk</a>
+            </div>
+        </div>
+    </nav>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Mirpa Enterprises</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-b from-sky-100 via-amber-50 to-ladakh-stone">
+        <div class="absolute inset-0 topo-bg pointer-events-none"></div>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="#wrapper">Our Framework</a></li>
-								<li><a href="#four">Key Capabilities</a></li>
-								<li><a href="#footer">Contact Desk</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+        <div class="max-w-5xl mx-auto px-6 text-center z-10 animate-fade-in opacity-0">
+            <span class="inline-block px-3 py-1 bg-ladakh-sky text-ladakh-deepsky rounded-full text-xs font-semibold tracking-wider uppercase mb-6">DPIIT Registered Company</span>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold text-ladakh-darkstone mb-6 leading-tight">
+                Ascending towards a <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-ladakh-clay via-ladakh-orange to-ladakh-deepsky">circular future</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Engineering sustainable technical networks and circular asset infrastructure for high-altitude ecosystems.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#framework" class="w-full sm:w-auto px-8 py-4 bg-ladakh-darkstone text-white rounded-xl font-medium shadow-xl hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
+                    Explore Ecosystem <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<div class="logo"><span class="icon fa-gem"></span></div>
-							<h2>Mirpa Enterprises</h2>
-							<p>Ascending towards a circular future.<br />Engineering sustainable technical networks and circular asset infrastructure for high-altitude ecosystems.</p>
-						</div>
-					</section>
+        <!-- Animated Mountain Silhouettes -->
+        <div class="absolute bottom-0 left-0 w-full pointer-events-none flex items-end justify-center z-0">
+            <svg class="w-[120%] min-w-[1000px] text-ladakh-clay/10 transform translate-y-12 animate-float-delayed" viewBox="0 0 1440 320" fill="currentColor">
+                <path d="M0,224L120,192C240,160,480,96,720,112C960,128,1200,224,1320,272L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+            </svg>
+            <svg class="absolute w-[130%] min-w-[1200px] text-ladakh-deepsky/10 transform translate-y-6 animate-float-slow" viewBox="0 0 1440 320" fill="currentColor">
+                <path d="M0,160L240,224C480,256,960,320,1200,288L1440,256L1440,320L1200,320C960,320,480,320,240,320L0,320Z"></path>
+            </svg>
+            <svg class="absolute w-[140%] min-w-[1400px] text-ladakh-stone" viewBox="0 0 1440 320" fill="currentColor">
+                <path d="M0,288L360,224C720,160,1080,288,1260,320L1440,320L1260,320C1080,320,720,320,360,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
 
-				<!-- Wrapper -->
-					<section id="wrapper">
+    <!-- Framework Section -->
+    <section id="framework" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sm font-semibold uppercase tracking-wider text-ladakh-clay block mb-3">01 — 03</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-ladakh-darkstone">Operational Framework</h2>
+            </div>
 
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">01. Infrastructure Procurement & Institutional Bidding</h2>
-										<p><strong>The Blueprint:</strong> High-volume supply frameworks tailored for major public and institutional procurement channels.</p>
-										<p><strong>The Vision:</strong> Actively scaling logistical capacity to securely execute critical public sector contracts.</p>
-										<a href="#footer" class="special">🔌 Public Sector Infrastructure Pipelines</a>
-									</div>
-								</div>
-							</section>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card p-8 rounded-2xl shadow-sm border-t-4 border-t-ladakh-deepsky flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center text-ladakh-deepsky mb-6 text-xl">📋</div>
+                        <h3 class="font-serif text-lg font-bold text-ladakh-darkstone mb-3">01. Infrastructure Procurement & Institutional Bidding</h3>
+                        <p class="text-xs text-slate-500 mb-2"><strong>The Blueprint:</strong> High-volume supply frameworks tailored for major public and institutional procurement channels.</p>
+                        <p class="text-xs text-slate-600"><strong>The Vision:</strong> Actively scaling logistical capacity to securely execute critical public sector contracts.</p>
+                    </div>
+                    <div class="mt-6 text-xs font-semibold text-ladakh-deepsky">🔌 Public Sector Infrastructure Pipelines</div>
+                </div>
 
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">02. Enterprise Technology Distribution</h2>
-										<p><strong>The Blueprint:</strong> Strategic corporate intermediary channeling hardware from global technology brands.</p>
-										<p><strong>The Vision:</strong> Bridging the manufacturing loop directly with enterprise peripheral demands.</p>
-										<a href="#footer" class="special">💻 Advanced Systems & Enterprise Networking</a>
-									</div>
-								</div>
-							</section>
+                <!-- Card 2 -->
+                <div class="glass-card p-8 rounded-2xl shadow-sm border-t-4 border-t-ladakh-orange flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-ladakh-orange mb-6 text-xl">💻</div>
+                        <h3 class="font-serif text-lg font-bold text-ladakh-darkstone mb-3">02. Enterprise Technology Distribution</h3>
+                        <p class="text-xs text-slate-500 mb-2"><strong>The Blueprint:</strong> Strategic corporate intermediary channeling hardware from global technology brands.</p>
+                        <p class="text-xs text-slate-600"><strong>The Vision:</strong> Bridging the manufacturing loop directly with enterprise peripheral demands.</p>
+                    </div>
+                    <div class="mt-6 text-xs font-semibold text-ladakh-orange">💻 Advanced Systems & Enterprise Networking</div>
+                </div>
 
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">03. High-Altitude Circular Hub</h2>
-										<p><strong>The Blueprint:</strong> Dedicated ventures piloting sustainable circular economy frameworks in high-altitude terrain.</p>
-										<p><strong>The Vision:</strong> Establishing regional asset life extension systems to limit linear resource use.</p>
-										<a href="#footer" class="special">🏔️ High-altitude clean operations</a>
-									</div>
-								</div>
-							</section>
+                <!-- Card 3 -->
+                <div class="glass-card p-8 rounded-2xl shadow-sm border-t-4 border-t-ladakh-earth flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-ladakh-earth mb-6 text-xl">♻️</div>
+                        <h3 class="font-serif text-lg font-bold text-ladakh-darkstone mb-3">03. High-Altitude Circular Hub</h3>
+                        <p class="text-xs text-slate-500 mb-2"><strong>The Blueprint:</strong> Dedicated ventures piloting sustainable circular economy frameworks in high-altitude terrain.</p>
+                        <p class="text-xs text-slate-600"><strong>The Vision:</strong> Establishing regional asset life extension systems to limit linear resource use.</p>
+                    </div>
+                    <div class="mt-6 text-xs font-semibold text-ladakh-earth">🏔️ High-altitude clean operations</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Core Operations & Resource Lifecycles</h2>
-									<p>Mirpa Enterprises Private Limited functions as a structural catalyst, realigning industrial networks through sustainable asset management strategies, tailored supply pathways, and specialized high-altitude eco-infrastructure fields.</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">04. Asset Diagnostics & Engineering Reclamation</h3>
-											<p><strong>The Blueprint:</strong> Systematic breakdown, component diagnostic testing, and sorting pipelines for out-of-service gear.</p>
-											<p><strong>The Vision:</strong> Transforming end-of-life capital equipment into useful, high-yield secondary resources.</p>
-											<a href="#footer" class="special">🛠️ Component-Level Diagnostics & Life-Extension</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">05. Sustainable Civil & Eco-Asset Development</h3>
-											<p><strong>The Blueprint:</strong> Directing engineering structures and investment towards completely new infrastructure fields.</p>
-											<p><strong>The Vision:</strong> Deploying zero-emission installations to secure low-carbon footprints right from day one.</p>
-											<a href="#footer" class="special">🌲 Sustainable Engineering & Structural Footprints</a>
-										</article>
-									</section>
-								</div>
-							</section>
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="py-24 bg-ladakh-stone border-t border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sm font-semibold uppercase tracking-wider text-ladakh-moss block mb-3">04 — 05</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-ladakh-darkstone">Technical Capabilities</h2>
+            </div>
 
-					</section>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Card 4 -->
+                <div class="glass-card p-8 rounded-2xl shadow-sm border-l-4 border-l-ladakh-moss flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center text-ladakh-moss mb-6 text-xl">⚙️</div>
+                        <h3 class="font-serif text-xl font-bold text-ladakh-darkstone mb-3">04. Asset Diagnostics & Engineering Reclamation</h3>
+                        <p class="text-sm text-slate-600 mb-4"><strong>The Blueprint:</strong> Systematic breakdown, component diagnostic testing, and sorting pipelines for out-of-service gear.</p>
+                        <p class="text-sm text-slate-600"><strong>The Vision:</strong> Transforming end-of-life capital equipment into useful, high-yield secondary resources.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200/60 text-xs font-semibold text-ladakh-moss">🛠️ Component-Level Diagnostics & Life-Extension</div>
+                </div>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Contact Us</h2>
-							<p>Connect with our administrative desk to discuss institutional bidding, enterprise partnerships, or regional circular infrastructure alignment initiatives.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name / Organization</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Corporate Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Detailed Scope Statement</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Mirpa Enterprises Private Limited<br />
-									Support & Operations Desk<br />
-									Ladakh Region, India
-								</li>
-								<li class="icon solid fa-briefcase">DPIIT Registered Company</li>
-								<li class="icon solid fa-envelope"><a href="mailto:info@mirpa.in">info@mirpa.in</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; 2026 Mirpa Enterprises Private Limited. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+                <!-- Card 5 -->
+                <div class="glass-card p-8 rounded-2xl shadow-sm border-l-4 border-l-ladakh-clay flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-ladakh-clay mb-6 text-xl">🌱</div>
+                        <h3 class="font-serif text-xl font-bold text-ladakh-darkstone mb-3">05. Sustainable Civil & Eco-Asset Development</h3>
+                        <p class="text-sm text-slate-600 mb-4"><strong>The Blueprint:</strong> Directing engineering structures and investment towards completely new infrastructure fields.</p>
+                        <p class="text-sm text-slate-600"><strong>The Vision:</strong> Deploying zero-emission installations to secure low-carbon footprints right from day one.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200/60 text-xs font-semibold text-ladakh-clay">🌲 Sustainable Engineering & Structural Footprints</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			</div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-1">
+                    <span class="text-sm font-semibold uppercase tracking-wider text-ladakh-orange block mb-3">Contact Desk</span>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-ladakh-darkstone mb-6">Connect With Mirpa</h2>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        Explore strategic alignment pathways, regulatory off-take frameworks, or infrastructure development logistics.
+                    </p>
+                    <div class="space-y-4 text-sm text-slate-600">
+                        <p class="font-semibold text-ladakh-darkstone">Mirpa Enterprises Private Limited</p>
+                        <p>📍 Support & Operations Desk, Ladakh Region, India</p>
+                        <p>✉️ <a href="mailto:info@mirpa.in" class="text-ladakh-deepsky underline">info@mirpa.in</a></p>
+                    </div>
+                </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+                <div class="lg:col-span-2 glass-card p-8 rounded-3xl border border-slate-200 shadow-lg">
+                    <form action="#" method="POST" class="space-y-6" onsubmit="event.preventDefault(); alert('Inquiry processed.');">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Name / Organization</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-ladakh-deepsky text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Corporate Email</label>
+                                <input type="email" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-ladakh-deepsky text-sm">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Detailed Scope Statement</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-ladakh-deepsky text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-ladakh-darkstone to-slate-800 text-white font-medium rounded-xl shadow-md hover:shadow-lg transition-all">
+                            Submit Framework Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	</body>
+    <!-- Footer -->
+    <footer class="bg-ladakh-darkstone text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <span class="font-serif text-xl font-bold tracking-tight text-white block mb-1">MIRPA ENTERPRISES</span>
+                <p class="text-xs text-slate-500">DPIIT Registered Company | Circular Infrastructure Ecosystems</p>
+            </div>
+            <p class="text-xs text-slate-600">&copy; 2026 Mirpa Enterprises Private Limited. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
 </html>
