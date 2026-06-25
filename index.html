@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mirpa Enterprises – High-Altitude IT Infrastructure & Circular Solutions</title>
-  <meta name="description" content="DPIIT-recognised startup. Early-stage multi-OEM procurement, e-waste circularity, and high-altitude diagnostics. Based in Ladakh. GeM-registered, MSE-certified.">
+  <meta name="description" content="DPIIT-recognised startup. Multi-OEM procurement, e-waste circularity, and high-altitude diagnostics. Based in Ladakh. GeM-registered, MSE-certified.">
   <meta name="keywords" content="Mirpa Enterprises, Ladakh IT, e-waste circularity, high-altitude IT infrastructure, GeM registered, MSE certified, DPIIT startup, multi-OEM procurement">
   <meta property="og:title" content="Mirpa Enterprises – High-Altitude IT Infrastructure">
   <meta property="og:description" content="DPIIT-recognised startup delivering IT procurement, e-waste solutions, and diagnostics from Ladakh.">
@@ -15,19 +15,18 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:      #0D1B2A;
-      --navy-mid:  #162436;
-      --navy-card: #1C3049;
+      --navy:      #0A0F18; /* Darker, sleek tech canvas */
+      --navy-mid:  #111823;
+      --navy-card: rgba(20, 29, 43, 0.6);
       --azure:     #4A8FD4;
-      --azure-lt:  #A8D8EA;
-      --glacier:   #7EC8E3;
-      --sand:      #E8C99A;
-      --terra:     #C4935A;
-      --terra-dk:  #9E6E3A;
-      --white:     #F0F4FA;
-      --dim:       #8BAABB;
-      --radius:    12px;
-      --transition: 0.3s ease;
+      --azure-lt:  #BDDBFF;
+      --glacier:   #8ECAE6;
+      --sand:      #E2C293;
+      --terra:     #C99B63;
+      --white:     #F3F6FA;
+      --dim:       #94A7B5;
+      --radius:    8px; /* Tighter corners for modern luxury aesthetic */
+      --transition: cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
     }
 
     html { scroll-behavior: smooth; }
@@ -38,187 +37,152 @@
       color: var(--white);
       line-height: 1.6;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* ── NAV ─────────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 5%;
-      background: rgba(13,27,42,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(74,143,212,0.15);
+      padding: 16px 6%;
+      background: rgba(10, 15, 24, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     }
 
     .nav-logo {
       text-decoration: none;
-      font-size: 1.5rem; 
-      font-weight: 700; 
-      letter-spacing: 0.05em;
+      font-size: 1.15rem; 
+      font-weight: 800; 
+      letter-spacing: 0.15em;
       color: var(--white);
     }
 
     .nav-links {
-      display: flex; gap: 32px; list-style: none;
+      display: flex; gap: 36px; list-style: none;
       align-items: center;
     }
     .nav-links a {
       color: var(--dim); text-decoration: none;
-      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
       text-transform: uppercase; transition: color var(--transition);
     }
     .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 6px 16px; border-radius: 4px;
+      transition: all var(--transition) !important;
+    }
+    .nav-cta:hover { background: var(--white); color: var(--navy) !important; border-color: var(--white); }
 
     /* ── HERO ────────────────────────────────────────── */
     .hero {
       position: relative;
       min-height: 100vh;
       display: flex; flex-direction: column;
-      justify-content: flex-end;
-      padding-bottom: 120px;
+      justify-content: center;
+      padding-bottom: 60px;
       overflow: hidden;
     }
 
     .hero-sky {
       position: absolute; inset: 0;
-      background: linear-gradient(
-        175deg,
-        #0A0F1A 0%,
-        #0D1B2A 30%,
-        #142233 55%,
-        #1A3A5C 75%,
-        #2A5F8F 90%,
-        #3A7FBF 100%
-      );
+      background: linear-gradient(180deg, #070A10 0%, #0A0F18 60%, #152235 100%);
     }
 
     .stars {
-      position: absolute; inset: 0; overflow: hidden;
+      position: absolute; inset: 0; overflow: hidden; opacity: 0.4;
     }
-    .star {
-      position: absolute; border-radius: 50%;
-      background: rgba(240,244,250,0.85);
-    }
-    .s1 { top: 12%; left: 15%; width: 2px; height: 2px; }
-    .s2 { top: 25%; left: 45%; width: 1.5px; height: 1.5px; }
-    .s3 { top: 7%; right: 22%; width: 2.5px; height: 2.5px; }
-    .s4 { top: 35%; right: 40%; width: 1px; height: 1px; }
+    .star { position: absolute; border-radius: 50%; background: #fff; }
+    .s1 { top: 15%; left: 18%; width: 1.5px; height: 1.5px; }
+    .s2 { top: 32%; left: 55%; width: 1px; height: 1px; }
+    .s3 { top: 10%; right: 25%; width: 2px; height: 2px; }
+    .s4 { top: 45%; right: 38%; width: 1px; height: 1px; }
 
     .hero-sun {
       position: absolute;
-      width: 90px; height: 90px;
+      width: 70px; height: 70px;
       border-radius: 50%;
-      background: radial-gradient(circle, #fff 0%, #e8f4ff 40%, rgba(168,216,234,0) 70%);
-      top: 34%; right: 16%;
-      box-shadow: 0 0 60px 30px rgba(168,216,234,0.25), 0 0 120px 60px rgba(74,143,212,0.1);
+      background: radial-gradient(circle, #fff 0%, rgba(255,255,255,0.1) 60%, transparent 100%);
+      top: 28%; right: 20%;
+      opacity: 0.25;
     }
 
     .mountains { position: absolute; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; pointer-events: none;}
-
     .mt { position: absolute; bottom: 0; width: 100%; }
 
     .mt-1 {
-      height: 45vh;
-      background: #1E4A78;
-      clip-path: polygon(
-        0% 100%, 0% 75%, 5% 60%, 10% 68%, 15% 45%, 20% 55%,
-        25% 30%, 28% 42%, 33% 18%, 36% 32%, 40% 20%, 43% 35%,
-        47% 15%, 50% 28%, 54% 10%, 57% 22%, 62% 8%, 65% 20%,
-        70% 32%, 74% 16%, 78% 38%, 82% 22%, 87% 44%, 92% 28%,
-        96% 48%, 100% 38%, 100% 100%
-      );
+      height: 38vh; background: #111A26;
+      clip-path: polygon(0% 100%, 0% 75%, 8% 58%, 18% 42%, 28% 55%, 38% 28%, 48% 48%, 58% 22%, 68% 44%, 78% 32%, 88% 52%, 100% 35%, 100% 100%);
+      opacity: 0.3;
     }
-
     .mt-1-snow {
-      height: 45vh;
-      background: rgba(168,216,234,0.18);
-      clip-path: polygon(
-        25% 32%, 28% 42%, 26% 38%,
-        33% 18%, 36% 32%, 34% 25%,
-        47% 15%, 50% 28%, 48% 20%,
-        54% 10%, 57% 22%, 55% 14%,
-        62% 8%, 65% 20%, 63% 12%,
-        74% 16%, 78% 38%, 76% 24%,
-        82% 22%, 87% 44%, 84% 30%
-      );
+      height: 38vh; background: rgba(255, 255, 255, 0.05);
+      clip-path: polygon(18% 42%, 22% 48%, 20% 46%, 38% 28%, 42% 35%, 39% 32%, 58% 22%, 62% 30%, 59% 25%);
     }
-
     .mt-2 {
-      height: 36vh;
-      background: #152C45;
-      clip-path: polygon(
-        0% 100%, 0% 80%, 4% 65%, 9% 75%, 14% 50%, 18% 62%,
-        23% 38%, 27% 52%, 31% 28%, 35% 45%, 39% 32%, 44% 48%,
-        48% 22%, 52% 40%, 57% 18%, 61% 34%, 66% 25%, 71% 42%,
-        76% 15%, 80% 35%, 85% 20%, 90% 45%, 95% 30%, 100% 50%, 100% 100%
-      );
+      height: 28vh; background: #0E1622;
+      clip-path: polygon(0% 100%, 0% 80%, 12% 62%, 25% 45%, 38% 65%, 52% 38%, 68% 58%, 82% 40%, 100% 65%, 100% 100%);
+      opacity: 0.6;
     }
-
     .mt-3 {
-      height: 24vh;
-      background: #0D1B2A;
-      clip-path: polygon(
-        0% 100%, 0% 85%, 6% 72%, 12% 80%, 18% 58%, 24% 70%,
-        30% 45%, 36% 62%, 42% 50%, 48% 65%, 55% 35%, 60% 52%,
-        66% 60%, 72% 40%, 78% 55%, 84% 42%, 90% 60%, 96% 50%, 100% 62%, 100% 100%
-      );
-    }
-
-    .mt-ground {
-      height: 6vh;
-      background: linear-gradient(to top, #0A1520, #0D1B2A);
+      height: 18vh; background: var(--navy);
+      clip-path: polygon(0% 100%, 0% 88%, 15% 72%, 32% 55%, 50% 75%, 68% 52%, 85% 70%, 100% 58%, 100% 100%);
     }
 
     .hero-content {
       position: relative; z-index: 10;
-      padding: 0 5%;
-      animation: fadeUp 1.1s ease both;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
+      padding: 0 6%;
+      max-width: 1000px;
+      margin-top: 60px;
     }
 
     .hero-h1 {
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
-      font-weight: 800; line-height: 1.12;
-      letter-spacing: -0.02em;
-      color: var(--white);
-      max-width: 900px;
-      margin-bottom: 24px;
+      font-size: clamp(1.8rem, 4vw, 3.1rem);
+      font-weight: 300; line-height: 1.25;
+      letter-spacing: -0.01em; color: var(--white);
+      margin-bottom: 28px;
     }
+    .hero-h1 strong { font-weight: 700; color: #fff; }
 
     .hero-desc {
-      font-size: clamp(1rem, 1.6vw, 1.3rem);
-      color: var(--dim); max-width: 750px;
-      font-weight: 300; line-height: 1.7;
-      margin-bottom: 40px;
+      font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+      color: var(--dim); max-width: 650px;
+      font-weight: 300; line-height: 1.8;
+      margin-bottom: 44px;
     }
 
-    .hero-actions {
-      display: flex; gap: 16px; flex-wrap: wrap;
+    .btn-primary {
+      background: none; color: var(--white);
+      padding: 12px 28px; border-radius: 4px;
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-decoration: none; transition: all var(--transition);
+      display: inline-block;
     }
+    .btn-primary:hover { border-color: var(--white); background: rgba(255,255,255,0.03); }
 
     /* ── SECTIONS SHARED ─────────────────────────────── */
-    section { padding: 100px 5%; }
+    section { padding: 120px 6%; border-bottom: 1px solid rgba(255, 255, 255, 0.03); }
 
     .section-eyebrow {
-      font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--azure); margin-bottom: 14px;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--azure); margin-bottom: 16px;
     }
 
     .section-h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 800; letter-spacing: -0.02em;
-      color: var(--white); margin-bottom: 16px; line-height: 1.2;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 400; letter-spacing: -0.01em;
+      color: var(--white); margin-bottom: 16px; line-height: 1.3;
     }
 
     .section-lead {
-      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
-      color: var(--dim); font-weight: 300; max-width: 800px;
-      line-height: 1.75; margin-bottom: 56px;
+      font-size: 0.95rem; color: var(--dim); font-weight: 300; 
+      max-width: 700px; line-height: 1.8; margin-bottom: 64px;
     }
 
     /* ── ECOSYSTEM ───────────────────────────────────── */
@@ -226,247 +190,140 @@
 
     .ecosystem-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-      margin-bottom: 56px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px; margin-bottom: 64px;
     }
 
     .eco-card {
       background: var(--navy-card);
-      border: 1px solid rgba(74,143,212,0.12);
+      border: 1px solid rgba(255, 255, 255, 0.03);
       border-radius: var(--radius);
-      padding: 40px 36px;
-      position: relative; overflow: hidden;
-      transition: border-color var(--transition), transform var(--transition);
+      padding: 44px 36px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all var(--transition);
     }
     .eco-card:hover {
-      border-color: rgba(74,143,212,0.4);
-      transform: translateY(-4px);
-    }
-    .eco-card::after {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--azure), transparent);
-      opacity: 0; transition: opacity var(--transition);
-    }
-    .eco-card:hover::after { opacity: 1; }
-
-    .svc-icon {
-      width: 48px; height: 48px;
-      margin-bottom: 24px;
-      position: relative;
+      border-color: rgba(74, 143, 212, 0.25);
+      background: rgba(20, 29, 43, 0.9);
     }
 
-    .icon-chip { 
-      border: 2px solid var(--azure);
-      border-radius: 6px;
-    }
+    .svc-icon { width: 40px; height: 40px; margin-bottom: 28px; position: relative; opacity: 0.8; }
+
+    .icon-chip { border: 1.5px solid var(--azure); border-radius: 4px; }
     .icon-chip::before {
-      content: ''; position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%,-50%); width: 20px; height: 20px;
-      border: 2px solid var(--azure); border-radius: 3px;
-    }
-    .icon-chip::after {
-      content: ''; position: absolute; top: 50%; left: -8px;
-      transform: translateY(-50%); width: 6px; height: 2px; background: var(--azure);
-      box-shadow: 0 8px 0 var(--azure), 0 -8px 0 var(--azure),
-                  34px 0 0 var(--azure), 34px 8px 0 var(--azure), 34px -8px 0 var(--azure);
+      content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 16px; height: 16px; border: 1.5px solid var(--azure); border-radius: 2px;
     }
 
-    .icon-indigenous {
-      border: 2px solid var(--terra);
-      border-radius: 50%;
-    }
+    .icon-indigenous { border: 1.5px solid var(--terra); border-radius: 50%; }
     .icon-indigenous::before {
-      content: ''; position: absolute; inset: 6px;
-      border: 2px dashed var(--terra); border-radius: 50%;
-    }
-    .icon-indigenous::after {
-      content: ''; position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%,-50%); width: 10px; height: 10px;
-      background: var(--sand); border-radius: 50%;
+      content: ''; position: absolute; inset: 5px; border: 1.5px dashed var(--terra); border-radius: 50%;
     }
 
-    .icon-tender {
-      border-bottom: 3px solid var(--glacier);
-    }
+    .icon-tender { border-bottom: 2px solid var(--glacier); }
     .icon-tender::before {
-      content: ''; position: absolute; bottom: 6px; left: 6px; right: 6px; top: 12px;
-      border: 2px solid var(--glacier); border-bottom: none; border-radius: 4px 4px 0 0;
-    }
-    .icon-tender::after {
-      content: ''; position: absolute; top: 4px; left: 50%; transform: translateX(-50%);
-      width: 12px; height: 4px; background: var(--glacier); border-radius: 2px;
+      content: ''; position: absolute; bottom: 5px; left: 5px; right: 5px; top: 12px;
+      border: 1.5px solid var(--glacier); border-bottom: none; border-radius: 3px 3px 0 0;
     }
 
-    .eco-name {
-      font-size: 1.2rem; font-weight: 700;
-      color: var(--white); margin-bottom: 12px;
-    }
-    .eco-desc {
-      font-size: 0.9rem; color: var(--dim);
-      line-height: 1.7; font-weight: 300;
-    }
+    .eco-name { font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 14px; }
+    .eco-desc { font-size: 0.88rem; color: var(--dim); line-height: 1.75; font-weight: 300; }
 
     .brand-strip {
-      margin-top: 20px; padding-top: 20px;
-      border-top: 1px solid rgba(74,143,212,0.15);
-      font-size: 0.85rem; color: var(--white);
-      font-weight: 600; letter-spacing: 0.04em;
+      margin-top: 24px; padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.8rem; color: rgba(255, 255, 255, 0.5);
+      font-weight: 500; letter-spacing: 0.04em;
     }
-    .brand-footnote {
-      display: block; margin-top: 6px;
-      font-size: 0.7rem; color: var(--dim); font-weight: 300;
-    }
+    .brand-footnote { display: block; margin-top: 8px; font-size: 0.68rem; color: rgba(148, 167, 181, 0.5); font-weight: 300; }
 
     .compliance-strip {
-      display: flex; gap: 32px; flex-wrap: wrap;
-      padding: 24px 0; border-top: 1px solid rgba(74,143,212,0.12);
-      color: var(--dim); font-size: 0.82rem; font-weight: 600;
-      letter-spacing: 0.05em;
+      display: flex; gap: 40px; flex-wrap: wrap;
+      padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--dim); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
     }
-    .compliance-strip span {
-      display: flex; align-items: center; gap: 8px;
-    }
-    .compliance-strip span::before {
-      content: ''; display: inline-block; width: 6px; height: 6px;
-      background: var(--azure); border-radius: 50%;
-    }
+    .compliance-strip span { display: flex; align-items: center; gap: 8px; }
+    .compliance-strip span::before { content: ''; display: inline-block; width: 4px; height: 4px; background: var(--azure); border-radius: 50%; }
 
     /* ── VISION ──────────────────────────────────────── */
     .vision { background: var(--navy-mid); }
 
-    .vision-list {
-      display: flex; flex-direction: column; gap: 24px; max-width: 960px;
-    }
+    .vision-list { display: flex; flex-direction: column; gap: 16px; max-width: 900px; }
 
     .vision-item {
-      display: grid; grid-template-columns: 80px 1fr;
-      padding: 32px; background: transparent;
-      border-left: 3px solid rgba(74,143,212,0.15);
+      display: grid; grid-template-columns: 70px 1fr;
+      padding: 28px 32px; background: transparent;
+      border-left: 2px solid rgba(255, 255, 255, 0.03);
       transition: all var(--transition);
-      border-radius: 0 var(--radius) var(--radius) 0;
     }
     .vision-item:hover {
       border-left-color: var(--azure);
-      background: var(--navy-card);
-      transform: translateX(6px);
+      background: rgba(255, 255, 255, 0.01);
     }
 
-    .vision-num {
-      font-size: 1.6rem; font-weight: 800;
-      color: var(--azure); opacity: 0.8; line-height: 1;
-    }
-    .vision-body h3 {
-      font-size: 1.3rem; font-weight: 700;
-      color: var(--white); margin-bottom: 8px;
-    }
-    .vision-body p {
-      font-size: 0.95rem; color: var(--dim);
-      font-weight: 300; line-height: 1.7;
-    }
+    .vision-num { font-size: 1.1rem; font-weight: 700; color: var(--azure); opacity: 0.6; font-family: monospace; }
+    .vision-body h3 { font-size: 1.1rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+    .vision-body p { font-size: 0.9rem; color: var(--dim); font-weight: 300; line-height: 1.75; }
 
     /* ── VENTURES ────────────────────────────────────── */
     .ventures { background: var(--navy); }
-
-    .ventures-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
+    .ventures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
 
     .venture-card {
-      background: var(--navy-card);
-      border: 1px solid rgba(74,143,212,0.1);
-      border-radius: var(--radius);
-      padding: 40px 32px;
-      transition: all var(--transition);
+      background: var(--navy-card); border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius); padding: 44px 36px; transition: all var(--transition);
     }
     .venture-card:hover {
-      border-color: rgba(74,143,212,0.35);
-      box-shadow: 0 8px 24px rgba(74,143,212,0.05);
-      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.1);
+      background: rgba(20, 29, 43, 0.8);
     }
 
     .venture-tag {
-      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--sand);
-      margin-bottom: 12px; display: inline-block;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--sand); margin-bottom: 16px; display: inline-block;
     }
-    .venture-card h3 {
-      font-size: 1.25rem; font-weight: 700;
-      color: var(--white); margin-bottom: 10px;
-    }
-    .venture-card p {
-      font-size: 0.9rem; color: var(--dim);
-      font-weight: 300; line-height: 1.6;
-    }
+    .venture-card h3 { font-size: 1.1rem; font-weight: 600; color: var(--white); margin-bottom: 12px; }
+    .venture-card p { font-size: 0.88rem; color: var(--dim); font-weight: 300; line-height: 1.7; }
 
     /* ── FOOTER & CONTACT ────────────────────────────── */
-    footer {
-      background: #08111A;
-      padding: 80px 5% 40px 5%;
-      border-top: 1px solid rgba(74,143,212,0.15);
-    }
+    footer { background: #05080D; padding: 100px 6% 40px 6%; }
 
-    .footer-top {
-      display: grid; grid-template-columns: 1.5fr 1fr;
-      gap: 64px; margin-bottom: 64px;
-    }
+    .footer-top { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; margin-bottom: 80px; }
 
-    .footer-cta {
-      font-size: 1.6rem; font-weight: 700;
-      color: var(--white); margin-bottom: 24px;
-    }
+    .footer-cta { font-size: 1.35rem; font-weight: 400; color: var(--white); margin-bottom: 24px; letter-spacing: -0.01em; }
     .footer-email {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800; color: var(--azure);
-      text-decoration: none; display: inline-block;
-      margin-bottom: 12px; transition: color var(--transition);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700; color: var(--azure); text-decoration: none;
+      display: inline-block; margin-bottom: 16px; transition: color var(--transition);
     }
     .footer-email:hover { color: var(--glacier); }
-    .footer-loc {
-      font-size: 1.05rem; color: var(--dim); font-weight: 300;
-      margin-bottom: 32px;
-    }
+    .footer-loc { font-size: 0.95rem; color: var(--dim); font-weight: 300; margin-bottom: 36px; }
 
     .oem-note {
-      font-size: 0.9rem; color: var(--dim);
-      background: rgba(74,143,212,0.04);
-      border-left: 2px solid var(--azure);
-      padding: 16px 20px; max-width: 580px;
+      font-size: 0.85rem; color: var(--dim); background: rgba(255, 255, 255, 0.01);
+      border-left: 2px solid var(--azure); padding: 16px 24px; max-width: 550px; line-height: 1.7;
     }
 
-    .tag-cloud {
-      display: flex; flex-wrap: wrap; gap: 10px; align-content: flex-start;
-    }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; }
     .tag {
-      background: var(--navy-mid); border: 1px solid rgba(74,143,212,0.12);
-      padding: 6px 14px; font-size: 0.78rem; border-radius: 4px;
-      color: var(--dim); font-weight: 500;
+      background: transparent; border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 6px 14px; font-size: 0.72rem; border-radius: 4px;
+      color: var(--dim); font-weight: 500; letter-spacing: 0.02em;
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(74,143,212,0.1);
-      padding-top: 32px; display: flex;
-      justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 20px;
-      font-size: 0.85rem; color: var(--dim);
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      padding-top: 36px; display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 20px; font-size: 0.8rem; color: rgba(148, 167, 181, 0.6);
     }
 
-    .privacy-section {
-      margin-top: 40px; padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.02);
-    }
-    .privacy-section h4 {
-      font-size: 0.8rem; color: var(--white); margin-bottom: 4px;
-    }
-    .privacy-section p {
-      font-size: 0.75rem; color: var(--dim); font-weight: 300;
-    }
+    .privacy-section { margin-top: 44px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.02); }
+    .privacy-section h4 { font-size: 0.75rem; color: var(--white); margin-bottom: 6px; font-weight: 600; }
+    .privacy-section p { font-size: 0.72rem; color: rgba(148, 167, 181, 0.5); font-weight: 300; }
 
-    /* ── RESPONSIVE ──────────────────────────────────── */
     @media (max-width: 868px) {
-      .footer-top { grid-template-columns: 1fr; gap: 40px; }
+      .footer-top { grid-template-columns: 1fr; gap: 48px; }
       .nav-links { display: none; }
     }
   </style>
@@ -474,9 +331,7 @@
 <body>
 
   <nav>
-    <a href="#" class="nav-logo">
-      <span class="logo-name">MIRPA</span>
-    </a>
+    <a href="#" class="nav-logo">MIRPA</a>
     <ul class="nav-links">
       <li><a href="#">Home</a></li>
       <li><a href="#ecosystem">Ecosystem</a></li>
@@ -501,11 +356,10 @@
       <div class="mt mt-1-snow"></div>
       <div class="mt mt-2"></div>
       <div class="mt mt-3"></div>
-      <div class="mt mt-ground"></div>
     </div>
 
     <div class="hero-content">
-      <h1 class="hero-h1">Engineered for extremes. Circular from core. Delivered to the last mile.</h1>
+      <h1 class="hero-h1">Engineered for extremes. <strong>Circular from core.</strong> Delivered to the last mile.</h1>
       <p class="hero-desc">High‑altitude IT infrastructure, multi‑OEM procurement, and circular diagnostics — built for the world's most extreme environments.</p>
       <div class="hero-actions">
         <a href="#ecosystem" class="btn-primary">Explore Our Ecosystem</a>
