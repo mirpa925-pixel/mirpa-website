@@ -1,710 +1,664 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mirpa Enterprises – High-Altitude IT Infrastructure & Circular Solutions</title>
-    <meta name="description" content="DPIIT-recognised startup. Early-stage multi-OEM procurement, e-waste circularity, and high-altitude diagnostics. Based in Ladakh. GeM-registered, MSE-certified.">
-    <style>
-        :root {
-            --bg-base: #1C1A17; /* Rich dark earthy brown-terracotta tint */
-            --bg-surface: #26221E; /* Lighter sand/earth tone surface */
-            --bg-surface-hover: #332D28;
-            --accent-blue: #4A90E2; /* Crisp sky blue */
-            --text-main: #F4F1EE; /* Cloud white */
-            --text-muted: #A8A096; /* Soft sand-grey mute */
-            --border-color: #3D352E;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-base);
-            color: var(--text-main);
-        }
-
-        body {
-            line-height: 1.6;
-            font-weight: 300;
-        }
-
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text-main);
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            padding: 8rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        /* 1. Sticky Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(28, 26, 23, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 4.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            letter-spacing: 0.05em;
-            color: var(--text-main);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: var(--text-muted);
-            letter-spacing: 0.02em;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-blue);
-        }
-
-        /* 2. Hero Section */
-        .hero-section {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 4.5rem;
-            overflow: hidden;
-            background: linear-gradient(180deg, #1C1A17 0%, #221D18 100%);
-        }
-
-        /* Pure CSS Landscape Vector Graphic Graphics */
-        .hero-bg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .mountain-far {
-            position: absolute;
-            bottom: 0;
-            left: -10%;
-            width: 120%;
-            height: 55%;
-            background: linear-gradient(135deg, #2D251E 0%, #1A1512 100%);
-            clip-path: polygon(0% 100%, 15% 40%, 35% 65%, 55% 25%, 75% 50%, 90% 15%, 100% 100%);
-            opacity: 0.4;
-        }
-
-        .mountain-near {
-            position: absolute;
-            bottom: 0;
-            left: -5%;
-            width: 110%;
-            height: 35%;
-            background: linear-gradient(135deg, #231C17 0%, #13100E 100%);
-            clip-path: polygon(0% 100%, 20% 50%, 45% 20%, 70% 60%, 85% 30%, 100% 100%);
-            opacity: 0.8;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-        }
-
-        .cloud-node {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background: var(--accent-blue);
-            border-radius: 50%;
-            box-shadow: 0 0 20px 6px rgba(74, 144, 226, 0.4);
-        }
-        .node-1 { top: 25%; left: 15%; opacity: 0.6; }
-        .node-2 { top: 40%; right: 20%; opacity: 0.4; }
-        .node-3 { top: 15%; right: 40%; opacity: 0.5; width: 8px; height: 8px; }
-
-        .cloud-line {
-            position: absolute;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(74, 144, 226, 0.2), transparent);
-            width: 100%;
-        }
-        .line-1 { top: 25%; }
-        .line-2 { top: 40%; }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-        }
-
-        .hero-slogan {
-            font-size: 3.5rem;
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-subheadline {
-            font-size: 1.4rem;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-            max-width: 750px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--accent-blue);
-            color: var(--text-main);
-            padding: 1rem 2.25rem;
-            font-weight: 600;
-            font-size: 1rem;
-            border-radius: 4px;
-            transition: background 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 14px rgba(74, 144, 226, 0.3);
-        }
-
-        .btn:hover {
-            background: #357ABD;
-            transform: translateY(-2px);
-        }
-
-        /* 3. Ecosystem Section */
-        .section-title {
-            font-size: 2.25rem;
-            margin-bottom: 1rem;
-            text-align: left;
-        }
-
-        .section-desc {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 800px;
-            margin-bottom: 4rem;
-        }
-
-        .ecosystem-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .eco-card {
-            background: var(--bg-surface);
-            padding: 2.5rem;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .eco-card:hover {
-            border-color: rgba(74, 144, 226, 0.4);
-        }
-
-        .eco-icon {
-            width: 3rem;
-            height: 3rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Pure CSS Icons */
-        .icon-sourcing {
-            background: linear-gradient(135deg, var(--accent-blue), transparent);
-            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-        }
-        .icon-mii {
-            background: linear-gradient(135deg, #E67E22, transparent);
-            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        }
-        .icon-inst {
-            background: linear-gradient(135deg, #2ECC71, transparent);
-            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-        }
-
-        .eco-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .eco-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .brand-list {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.85rem;
-            color: var(--text-main);
-            font-weight: 500;
-            letter-spacing: 0.05em;
-        }
-
-        .brand-disclaimer {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-            display: block;
-            font-weight: 300;
-        }
-
-        .badge-strip {
-            display: flex;
-            justify-content: flex-start;
-            gap: 3rem;
-            padding: 1.5rem 0;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-        }
-
-        /* 4. Our Vision Section */
-        .pillar-subtitle {
-            font-size: 1.1rem;
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .vision-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-            margin-top: 4rem;
-        }
-
-        .vision-item {
-            display: grid;
-            grid-template-columns: 80px 1fr;
-            padding: 2rem;
-            background: transparent;
-            border-left: 3px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .vision-item:hover {
-            border-left-color: var(--accent-blue);
-            background: var(--bg-surface);
-            transform: translateX(8px);
-        }
-
-        .vision-num {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--accent-blue);
-            opacity: 0.7;
-            line-height: 1;
-        }
-
-        .vision-body h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .vision-body p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 900px;
-        }
-
-        /* 5. Future Ventures */
-        .ventures-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .venture-card {
-            background: var(--bg-surface);
-            padding: 3rem 2.5rem;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .venture-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(74, 144, 226, 0.3);
-            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.05);
-        }
-
-        .venture-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.5s ease;
-        }
-
-        .venture-card:hover::before {
-            transform: translateX(100%);
-        }
-
-        .venture-status {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--accent-blue);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .venture-card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 1rem;
-        }
-
-        .venture-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* 6. Contact & Footer */
-        .footer-section {
-            background: #141210;
-            padding: 6rem 0 2rem 0;
-            border-bottom: none;
-        }
-
-        .footer-cta {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 4rem;
-            margin-bottom: 5rem;
-        }
-
-        .contact-box .email {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent-blue);
-            margin-bottom: 0.5rem;
-            display: inline-block;
-        }
-
-        .contact-box .email:hover {
-            color: #6ba4e8;
-        }
-
-        .contact-box .location {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .oem-invitation {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.02);
-            padding: 1.25rem;
-            border-left: 2px solid var(--border-color);
-            max-width: 600px;
-        }
-
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            align-content: flex-start;
-        }
-
-        .tag {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            border-radius: 3px;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border-color);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* 7. Privacy Policy */
-        .privacy-box {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #221D18;
-            font-size: 0.75rem;
-            color: #6E665E;
-        }
-
-        .privacy-box h4 {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 0.25rem;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 1024px) {
-            .ecosystem-grid, .ventures-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-slogan { font-size: 2.5rem; }
-            .hero-subheadline { font-size: 1.15rem; }
-            .ecosystem-grid, .ventures-grid, .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links { display: none; } /* Simplified for single file raw compliance */
-            .badge-strip { flex-direction: column; gap: 1rem; }
-            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mirpa Enterprises – High-Altitude IT Infrastructure & Circular Solutions</title>
+  <meta name="description" content="DPIIT-recognised startup. Early-stage multi-OEM procurement, e-waste circularity, and high-altitude diagnostics. Based in Ladakh. GeM-registered, MSE-certified.">
+  <meta name="keywords" content="Mirpa Enterprises, Ladakh IT, e-waste circularity, high-altitude IT infrastructure, GeM registered, MSE certified, DPIIT startup, multi-OEM procurement">
+  <meta property="og:title" content="Mirpa Enterprises – High-Altitude IT Infrastructure">
+  <meta property="og:description" content="DPIIT-recognised startup delivering IT procurement, e-waste solutions, and diagnostics from Ladakh.">
+  <meta property="og:url" content="https://mirpa.in">
+  <link rel="canonical" href="https://mirpa.in">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #0D1B2A;
+      --navy-mid:  #162436;
+      --navy-card: #1C3049;
+      --azure:     #4A8FD4;
+      --azure-lt:  #A8D8EA;
+      --glacier:   #7EC8E3;
+      --sand:      #E8C99A;
+      --terra:     #C4935A;
+      --terra-dk:  #9E6E3A;
+      --white:     #F0F4FA;
+      --dim:       #8BAABB;
+      --radius:    12px;
+      --transition: 0.3s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ─────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 5%;
+      background: rgba(13,27,42,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(74,143,212,0.15);
+    }
+
+    .nav-logo {
+      text-decoration: none;
+      font-size: 1.5rem; 
+      font-weight: 700; 
+      letter-spacing: 0.05em;
+      color: var(--white);
+    }
+
+    .nav-links {
+      display: flex; gap: 32px; list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--dim); text-decoration: none;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    /* ── HERO ────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 120px;
+      overflow: hidden;
+    }
+
+    .hero-sky {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        175deg,
+        #0A0F1A 0%,
+        #0D1B2A 30%,
+        #142233 55%,
+        #1A3A5C 75%,
+        #2A5F8F 90%,
+        #3A7FBF 100%
+      );
+    }
+
+    .stars {
+      position: absolute; inset: 0; overflow: hidden;
+    }
+    .star {
+      position: absolute; border-radius: 50%;
+      background: rgba(240,244,250,0.85);
+    }
+    .s1 { top: 12%; left: 15%; width: 2px; height: 2px; }
+    .s2 { top: 25%; left: 45%; width: 1.5px; height: 1.5px; }
+    .s3 { top: 7%; right: 22%; width: 2.5px; height: 2.5px; }
+    .s4 { top: 35%; right: 40%; width: 1px; height: 1px; }
+
+    .hero-sun {
+      position: absolute;
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff 0%, #e8f4ff 40%, rgba(168,216,234,0) 70%);
+      top: 34%; right: 16%;
+      box-shadow: 0 0 60px 30px rgba(168,216,234,0.25), 0 0 120px 60px rgba(74,143,212,0.1);
+    }
+
+    .mountains { position: absolute; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; pointer-events: none;}
+
+    .mt { position: absolute; bottom: 0; width: 100%; }
+
+    .mt-1 {
+      height: 45vh;
+      background: #1E4A78;
+      clip-path: polygon(
+        0% 100%, 0% 75%, 5% 60%, 10% 68%, 15% 45%, 20% 55%,
+        25% 30%, 28% 42%, 33% 18%, 36% 32%, 40% 20%, 43% 35%,
+        47% 15%, 50% 28%, 54% 10%, 57% 22%, 62% 8%, 65% 20%,
+        70% 32%, 74% 16%, 78% 38%, 82% 22%, 87% 44%, 92% 28%,
+        96% 48%, 100% 38%, 100% 100%
+      );
+    }
+
+    .mt-1-snow {
+      height: 45vh;
+      background: rgba(168,216,234,0.18);
+      clip-path: polygon(
+        25% 32%, 28% 42%, 26% 38%,
+        33% 18%, 36% 32%, 34% 25%,
+        47% 15%, 50% 28%, 48% 20%,
+        54% 10%, 57% 22%, 55% 14%,
+        62% 8%, 65% 20%, 63% 12%,
+        74% 16%, 78% 38%, 76% 24%,
+        82% 22%, 87% 44%, 84% 30%
+      );
+    }
+
+    .mt-2 {
+      height: 36vh;
+      background: #152C45;
+      clip-path: polygon(
+        0% 100%, 0% 80%, 4% 65%, 9% 75%, 14% 50%, 18% 62%,
+        23% 38%, 27% 52%, 31% 28%, 35% 45%, 39% 32%, 44% 48%,
+        48% 22%, 52% 40%, 57% 18%, 61% 34%, 66% 25%, 71% 42%,
+        76% 15%, 80% 35%, 85% 20%, 90% 45%, 95% 30%, 100% 50%, 100% 100%
+      );
+    }
+
+    .mt-3 {
+      height: 24vh;
+      background: #0D1B2A;
+      clip-path: polygon(
+        0% 100%, 0% 85%, 6% 72%, 12% 80%, 18% 58%, 24% 70%,
+        30% 45%, 36% 62%, 42% 50%, 48% 65%, 55% 35%, 60% 52%,
+        66% 60%, 72% 40%, 78% 55%, 84% 42%, 90% 60%, 96% 50%, 100% 62%, 100% 100%
+      );
+    }
+
+    .mt-ground {
+      height: 6vh;
+      background: linear-gradient(to top, #0A1520, #0D1B2A);
+    }
+
+    .hero-content {
+      position: relative; z-index: 10;
+      padding: 0 5%;
+      animation: fadeUp 1.1s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-h1 {
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      font-weight: 800; line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      max-width: 900px;
+      margin-bottom: 24px;
+    }
+
+    .hero-desc {
+      font-size: clamp(1rem, 1.6vw, 1.3rem);
+      color: var(--dim); max-width: 750px;
+      font-weight: 300; line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex; gap: 16px; flex-wrap: wrap;
+    }
+
+    /* ── SECTIONS SHARED ─────────────────────────────── */
+    section { padding: 100px 5%; }
+
+    .section-eyebrow {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--azure); margin-bottom: 14px;
+    }
+
+    .section-h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800; letter-spacing: -0.02em;
+      color: var(--white); margin-bottom: 16px; line-height: 1.2;
+    }
+
+    .section-lead {
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      color: var(--dim); font-weight: 300; max-width: 800px;
+      line-height: 1.75; margin-bottom: 56px;
+    }
+
+    /* ── ECOSYSTEM ───────────────────────────────────── */
+    .ecosystem { background: var(--navy); }
+
+    .ecosystem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-bottom: 56px;
+    }
+
+    .eco-card {
+      background: var(--navy-card);
+      border: 1px solid rgba(74,143,212,0.12);
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      position: relative; overflow: hidden;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .eco-card:hover {
+      border-color: rgba(74,143,212,0.4);
+      transform: translateY(-4px);
+    }
+    .eco-card::after {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--azure), transparent);
+      opacity: 0; transition: opacity var(--transition);
+    }
+    .eco-card:hover::after { opacity: 1; }
+
+    .svc-icon {
+      width: 48px; height: 48px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .icon-chip { 
+      border: 2px solid var(--azure);
+      border-radius: 6px;
+    }
+    .icon-chip::before {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%); width: 20px; height: 20px;
+      border: 2px solid var(--azure); border-radius: 3px;
+    }
+    .icon-chip::after {
+      content: ''; position: absolute; top: 50%; left: -8px;
+      transform: translateY(-50%); width: 6px; height: 2px; background: var(--azure);
+      box-shadow: 0 8px 0 var(--azure), 0 -8px 0 var(--azure),
+                  34px 0 0 var(--azure), 34px 8px 0 var(--azure), 34px -8px 0 var(--azure);
+    }
+
+    .icon-indigenous {
+      border: 2px solid var(--terra);
+      border-radius: 50%;
+    }
+    .icon-indigenous::before {
+      content: ''; position: absolute; inset: 6px;
+      border: 2px dashed var(--terra); border-radius: 50%;
+    }
+    .icon-indigenous::after {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%); width: 10px; height: 10px;
+      background: var(--sand); border-radius: 50%;
+    }
+
+    .icon-tender {
+      border-bottom: 3px solid var(--glacier);
+    }
+    .icon-tender::before {
+      content: ''; position: absolute; bottom: 6px; left: 6px; right: 6px; top: 12px;
+      border: 2px solid var(--glacier); border-bottom: none; border-radius: 4px 4px 0 0;
+    }
+    .icon-tender::after {
+      content: ''; position: absolute; top: 4px; left: 50%; transform: translateX(-50%);
+      width: 12px; height: 4px; background: var(--glacier); border-radius: 2px;
+    }
+
+    .eco-name {
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--white); margin-bottom: 12px;
+    }
+    .eco-desc {
+      font-size: 0.9rem; color: var(--dim);
+      line-height: 1.7; font-weight: 300;
+    }
+
+    .brand-strip {
+      margin-top: 20px; padding-top: 20px;
+      border-top: 1px solid rgba(74,143,212,0.15);
+      font-size: 0.85rem; color: var(--white);
+      font-weight: 600; letter-spacing: 0.04em;
+    }
+    .brand-footnote {
+      display: block; margin-top: 6px;
+      font-size: 0.7rem; color: var(--dim); font-weight: 300;
+    }
+
+    .compliance-strip {
+      display: flex; gap: 32px; flex-wrap: wrap;
+      padding: 24px 0; border-top: 1px solid rgba(74,143,212,0.12);
+      color: var(--dim); font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .compliance-strip span {
+      display: flex; align-items: center; gap: 8px;
+    }
+    .compliance-strip span::before {
+      content: ''; display: inline-block; width: 6px; height: 6px;
+      background: var(--azure); border-radius: 50%;
+    }
+
+    /* ── VISION ──────────────────────────────────────── */
+    .vision { background: var(--navy-mid); }
+
+    .vision-list {
+      display: flex; flex-direction: column; gap: 24px; max-width: 960px;
+    }
+
+    .vision-item {
+      display: grid; grid-template-columns: 80px 1fr;
+      padding: 32px; background: transparent;
+      border-left: 3px solid rgba(74,143,212,0.15);
+      transition: all var(--transition);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .vision-item:hover {
+      border-left-color: var(--azure);
+      background: var(--navy-card);
+      transform: translateX(6px);
+    }
+
+    .vision-num {
+      font-size: 1.6rem; font-weight: 800;
+      color: var(--azure); opacity: 0.8; line-height: 1;
+    }
+    .vision-body h3 {
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--white); margin-bottom: 8px;
+    }
+    .vision-body p {
+      font-size: 0.95rem; color: var(--dim);
+      font-weight: 300; line-height: 1.7;
+    }
+
+    /* ── VENTURES ────────────────────────────────────── */
+    .ventures { background: var(--navy); }
+
+    .ventures-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .venture-card {
+      background: var(--navy-card);
+      border: 1px solid rgba(74,143,212,0.1);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      transition: all var(--transition);
+    }
+    .venture-card:hover {
+      border-color: rgba(74,143,212,0.35);
+      box-shadow: 0 8px 24px rgba(74,143,212,0.05);
+      transform: translateY(-4px);
+    }
+
+    .venture-tag {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--sand);
+      margin-bottom: 12px; display: inline-block;
+    }
+    .venture-card h3 {
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--white); margin-bottom: 10px;
+    }
+    .venture-card p {
+      font-size: 0.9rem; color: var(--dim);
+      font-weight: 300; line-height: 1.6;
+    }
+
+    /* ── FOOTER & CONTACT ────────────────────────────── */
+    footer {
+      background: #08111A;
+      padding: 80px 5% 40px 5%;
+      border-top: 1px solid rgba(74,143,212,0.15);
+    }
+
+    .footer-top {
+      display: grid; grid-template-columns: 1.5fr 1fr;
+      gap: 64px; margin-bottom: 64px;
+    }
+
+    .footer-cta {
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--white); margin-bottom: 24px;
+    }
+    .footer-email {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800; color: var(--azure);
+      text-decoration: none; display: inline-block;
+      margin-bottom: 12px; transition: color var(--transition);
+    }
+    .footer-email:hover { color: var(--glacier); }
+    .footer-loc {
+      font-size: 1.05rem; color: var(--dim); font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .oem-note {
+      font-size: 0.9rem; color: var(--dim);
+      background: rgba(74,143,212,0.04);
+      border-left: 2px solid var(--azure);
+      padding: 16px 20px; max-width: 580px;
+    }
+
+    .tag-cloud {
+      display: flex; flex-wrap: wrap; gap: 10px; align-content: flex-start;
+    }
+    .tag {
+      background: var(--navy-mid); border: 1px solid rgba(74,143,212,0.12);
+      padding: 6px 14px; font-size: 0.78rem; border-radius: 4px;
+      color: var(--dim); font-weight: 500;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(74,143,212,0.1);
+      padding-top: 32px; display: flex;
+      justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 20px;
+      font-size: 0.85rem; color: var(--dim);
+    }
+
+    .privacy-section {
+      margin-top: 40px; padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.02);
+    }
+    .privacy-section h4 {
+      font-size: 0.8rem; color: var(--white); margin-bottom: 4px;
+    }
+    .privacy-section p {
+      font-size: 0.75rem; color: var(--dim); font-weight: 300;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 868px) {
+      .footer-top { grid-template-columns: 1fr; gap: 40px; }
+      .nav-links { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- 1. Sticky Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">MIRPA</div>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#ecosystem">Ecosystem</a>
-                <a href="#ventures">Ventures</a>
-                <a href="#vision">Vision</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
+  <nav>
+    <a href="#" class="nav-logo">
+      <span class="logo-name">MIRPA</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#ecosystem">Ecosystem</a></li>
+      <li><a href="#ventures">Ventures</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
 
-    <!-- 2. Hero Section -->
-    <section class="hero-section">
-        <div class="hero-bg">
-            <div class="cloud-line line-1"></div>
-            <div class="cloud-line line-2"></div>
-            <div class="cloud-node node-1"></div>
-            <div class="cloud-node node-2"></div>
-            <div class="cloud-node node-3"></div>
-            <div class="mountain-far"></div>
-            <div class="mountain-near"></div>
-        </div>
-        <div class="container hero-content">
-            <h1 class="hero-slogan">Engineered for extremes. Circular from core. Delivered to the last mile.</h1>
-            <p class="hero-subheadline">High‑altitude IT infrastructure, multi‑OEM procurement, and circular diagnostics — built for the world's most extreme environments.</p>
-            <a href="#ecosystem" class="btn">Explore Our Ecosystem</a>
-        </div>
-    </section>
+  <header class="hero">
+    <div class="hero-sky"></div>
+    <div class="stars">
+      <div class="star s1"></div>
+      <div class="star s2"></div>
+      <div class="star s3"></div>
+      <div class="star s4"></div>
+    </div>
+    <div class="hero-sun"></div>
+    
+    <div class="mountains">
+      <div class="mt mt-1"></div>
+      <div class="mt mt-1-snow"></div>
+      <div class="mt mt-2"></div>
+      <div class="mt mt-3"></div>
+      <div class="mt mt-ground"></div>
+    </div>
 
-    <!-- 3. Ecosystem Section -->
-    <section id="ecosystem">
-        <div class="container">
-            <h2 class="section-title">Our Procurement & Technology Ecosystem</h2>
-            <p class="section-desc">We are building an institution‑ready, brand‑agnostic hardware aggregation model for high‑altitude deployments — servers, workstations, networking, components.</p>
-            
-            <div class="ecosystem-grid">
-                <!-- Card 1 -->
-                <div class="eco-card">
-                    <div class="eco-icon icon-sourcing"></div>
-                    <h3>Multi‑OEM Sourcing Capability</h3>
-                    <p>We aim to source vendor‑neutrally across compute, networking, storage, and peripherals. Our model matches the right OEM to each project as we develop supplier partnerships.</p>
-                    <div class="brand-list">
-                        Dell | HP | Lenovo | Cisco | Fortinet
-                        <span class="brand-disclaimer">Representative brands. No partnership implied unless expressly stated.</span>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="eco-card">
-                    <div class="eco-icon icon-mii"></div>
-                    <h3>Make‑in‑India Alignment</h3>
-                    <p>Integrating indigenous server and networking brands under MII policies, leveraging MSE enablement on GeM.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="eco-card">
-                    <div class="eco-icon icon-inst"></div>
-                    <h3>Institutional Delivery</h3>
-                    <p>We facilitate procurement through GeM and direct B2G/B2B tender channels. Our process is designed for transparency and compliance.</p>
-                </div>
-            </div>
+    <div class="hero-content">
+      <h1 class="hero-h1">Engineered for extremes. Circular from core. Delivered to the last mile.</h1>
+      <p class="hero-desc">High‑altitude IT infrastructure, multi‑OEM procurement, and circular diagnostics — built for the world's most extreme environments.</p>
+      <div class="hero-actions">
+        <a href="#ecosystem" class="btn-primary">Explore Our Ecosystem</a>
+      </div>
+    </div>
+  </header>
 
-            <div class="badge-strip">
-                <div>DPIIT‑Recognised Startup</div>
-                <div>MSE‑Registered (Udyam)</div>
-                <div>GeM‑Registered Vendor</div>
-            </div>
+  <section id="ecosystem" class="ecosystem">
+    <div class="container">
+      <div class="section-eyebrow">Procurement Engine</div>
+      <h2 class="section-h2">Our Procurement & Technology Ecosystem</h2>
+      <p class="section-lead">We are building an institution‑ready, brand‑agnostic hardware aggregation model for high‑altitude deployments — servers, workstations, networking, components.</p>
+
+      <div class="ecosystem-grid">
+        <div class="eco-card">
+          <div class="svc-icon icon-chip"></div>
+          <h3 class="eco-name">Multi‑OEM Sourcing Capability</h3>
+          <p class="eco-desc">We aim to source vendor‑neutrally across compute, networking, storage, and peripherals. Our model matches the right OEM to each project as we develop supplier partnerships.</p>
+          <div class="brand-strip">
+            Dell | HP | Lenovo | Cisco | Fortinet
+            <span class="brand-footnote">Representative brands. No partnership implied unless expressly stated.</span>
+          </div>
         </div>
-    </section>
 
-    <!-- 4. Our Vision Section -->
-    <section id="vision">
-        <div class="container">
-            <div class="pillar-subtitle">The Five Pillars of Mirpa</div>
-            <h2 class="section-title">Everything we build serves a long‑term purpose.</h2>
-            
-            <div class="vision-list">
-                <!-- Pillar 1 -->
-                <div class="vision-item">
-                    <div class="vision-num">01</div>
-                    <div class="vision-body">
-                        <h3>Institutional Procurement at Scale</h3>
-                        <p>We build structured B2G workflows to convert government and PSU tenders — civil, electrical, IT — into transparent, repeatable processes through GeM.</p>
-                    </div>
-                </div>
-                <!-- Pillar 2 -->
-                <div class="vision-item">
-                    <div class="vision-num">02</div>
-                    <div class="vision-body">
-                        <h3>Multi‑OEM Technology Aggregation</h3>
-                        <p>One partner. All the hardware that matters. We bridge global manufacturers and institutional buyers with a brand‑agnostic approach, including emerging Make‑in‑India server brands.</p>
-                    </div>
-                </div>
-                <!-- Pillar 3 -->
-                <div class="vision-item">
-                    <div class="vision-num">03</div>
-                    <div class="vision-body">
-                        <h3>E‑Waste Circularity</h3>
-                        <p>Landfills are a design flaw. We have already launched a pilot e‑waste processing initiative in Ladakh, focused on comprehensive recycling — recovering valuable components, metals, and plastics from discarded electronics. Our goal is to build a closed‑loop circular economy, turning waste into a resource stream and moving the region toward zero‑landfill operations.</p>
-                    </div>
-                </div>
-                <!-- Pillar 4 -->
-                <div class="vision-item">
-                    <div class="vision-num">04</div>
-                    <div class="vision-body">
-                        <h3>Greenfield Infrastructure</h3>
-                        <p>Built from scratch. Built for extremes. We design and deploy micro‑data centres, renewable‑powered network nodes, and digital public infrastructure for the region.</p>
-                    </div>
-                </div>
-                <!-- Pillar 5 -->
-                <div class="vision-item">
-                    <div class="vision-num">05</div>
-                    <div class="vision-body">
-                        <h3>Altitude‑Native Consultancy & Services</h3>
-                        <p>Advice that breathes at 11,000 feet. System architecture, on‑site diagnostics, and lifecycle support — rooted in global best practice and local terrain expertise.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="eco-card">
+          <div class="svc-icon icon-indigenous"></div>
+          <h3 class="eco-name">Make‑in‑India Alignment</h3>
+          <p class="eco-desc">Integrating indigenous server and networking brands under MII policies, leveraging MSE enablement on GeM.</p>
         </div>
-    </section>
 
-    <!-- 5. Future Ventures -->
-    <section id="ventures">
-        <div class="container">
-            <h2 class="section-title">What We're Building Next</h2>
-            <p class="section-desc">Pioneering structural sustainability and edge resilient technologies for high-altitude zones.</p>
-            
-            <div class="ventures-grid">
-                <!-- Card 1 -->
-                <div class="venture-card">
-                    <span class="venture-status">Pilot Phase</span>
-                    <h3>E‑Waste Repurposing Plant</h3>
-                    <p>Component recovery for the circular IT economy.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="venture-card">
-                    <span class="venture-status">R&D Phase</span>
-                    <h3>Renewable‑Powered Edge Nodes</h3>
-                    <p>We are designing compact, solar‑powered IT nodes that can operate where connectivity and grid power are unreliable — bringing digital services closer to remote communities.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="venture-card">
-                    <span class="venture-status">Pipeline</span>
-                    <h3>Indigenous Hardware Collaboration</h3>
-                    <p>Partnering with Make‑in‑India OEMs to offer MII‑compliant products via our MSE procurement framework.</p>
-                </div>
-            </div>
+        <div class="eco-card">
+          <div class="svc-icon icon-tender"></div>
+          <h3 class="eco-name">Institutional Delivery</h3>
+          <p class="eco-desc">We facilitate procurement through GeM and direct B2G/B2B tender channels. Our process is designed for transparency and compliance.</p>
         </div>
-    </section>
+      </div>
 
-    <!-- 6. Contact & Footer -->
-    <footer id="contact" class="footer-section">
-        <div class="container">
-            <div class="footer-cta">Partner with us to build reliable IT for high‑altitude India.</div>
-            
-            <div class="footer-grid">
-                <div class="contact-box">
-                    <a href="mailto:info@mirpa.in" class="email">info@mirpa.in</a>
-                    <div class="location">Based in Ladakh, India</div>
-                    <div class="oem-invitation">
-                        <strong>OEMs:</strong> To discuss partnership and high‑altitude distribution, write to <a href="mailto:info@mirpa.in" style="color: var(--accent-blue);">info@mirpa.in</a>.
-                    </div>
-                </div>
-                
-                <div class="tag-cloud">
-                    <div class="tag">DPIIT Recognised</div>
-                    <div class="tag">MSE‑Registered</div>
-                    <div class="tag">GeM‑Registered Vendor</div>
-                    <div class="tag">B2G & B2B Ready</div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div>&copy; Mirpa Enterprises Private Limited. Engineered for altitude.</div>
-            </div>
+      <div class="compliance-strip">
+        <span>DPIIT‑Recognised Startup</span>
+        <span>MSE‑Registered (Udyam)</span>
+        <span>GeM‑Registered Vendor</span>
+      </div>
+    </div>
+  </section>
 
-            <!-- 7. Privacy Policy -->
-            <div class="privacy-box">
-                <h4>Privacy Policy</h4>
-                <p>We do not collect personal data through this website. Contact information is used solely to respond to inquiries. No tracking, no sharing.</p>
-            </div>
+  <section id="vision" class="vision">
+    <div class="container">
+      <div class="section-eyebrow">Strategic Blueprint</div>
+      <h2 class="section-h2">The Five Pillars of Mirpa</h2>
+      <p class="section-lead">Everything we build serves a long‑term purpose.</p>
+
+      <div class="vision-list">
+        <div class="vision-item">
+          <div class="vision-num">01</div>
+          <div class="vision-body">
+            <h3>Institutional Procurement at Scale</h3>
+            <p>We build structured B2G workflows to convert government and PSU tenders — civil, electrical, IT — into transparent, repeatable processes through GeM.</p>
+          </div>
         </div>
-    </footer>
+
+        <div class="vision-item">
+          <div class="vision-num">02</div>
+          <div class="vision-body">
+            <h3>Multi‑OEM Technology Aggregation</h3>
+            <p>One partner. All the hardware that matters. We bridge global manufacturers and institutional buyers with a brand‑agnostic approach, including emerging Make‑in‑India server brands.</p>
+          </div>
+        </div>
+
+        <div class="vision-item">
+          <div class="vision-num">03</div>
+          <div class="vision-body">
+            <h3>E‑Waste Circularity</h3>
+            <p>Landfills are a design flaw. We have already launched a pilot e‑waste processing initiative in Ladakh, focused on comprehensive recycling — recovering valuable components, metals, and plastics from discarded electronics. Our goal is to build a closed‑loop circular economy, turning waste into a resource stream and moving the region toward zero‑landfill operations.</p>
+          </div>
+        </div>
+
+        <div class="vision-item">
+          <div class="vision-num">04</div>
+          <div class="vision-body">
+            <h3>Greenfield Infrastructure</h3>
+            <p>Built from scratch. Built for extremes. We design and deploy micro‑data centres, renewable‑powered network nodes, and digital public infrastructure for the region.</p>
+          </div>
+        </div>
+
+        <div class="vision-item">
+          <div class="vision-num">05</div>
+          <div class="vision-body">
+            <h3>Altitude‑Native Consultancy & Services</h3>
+            <p>Advice that breathes at 11,000 feet. System architecture, on‑site diagnostics, and lifecycle support — rooted in global best practice and local terrain expertise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ventures" class="ventures">
+    <div class="container">
+      <div class="section-eyebrow">Next Horizons</div>
+      <h2 class="section-h2">What We're Building Next</h2>
+      <p class="section-lead">Developing localized computing and sustainable technologies specialized for high-altitude ecosystems.</p>
+
+      <div class="ventures-grid">
+        <div class="venture-card">
+          <span class="venture-tag">Pilot Phase</span>
+          <h3>E‑Waste Repurposing Plant</h3>
+          <p>Component recovery for the circular IT economy.</p>
+        </div>
+
+        <div class="venture-card">
+          <span class="venture-tag">Engineering R&amp;D</span>
+          <h3>Renewable‑Powered Edge Nodes</h3>
+          <p>We are designing compact, solar‑powered IT nodes that can operate where connectivity and grid power are unreliable — bringing digital services closer to remote communities.</p>
+        </div>
+
+        <div class="venture-card">
+          <span class="venture-tag">Framework Phase</span>
+          <h3>Indigenous Hardware Collaboration</h3>
+          <p>Partnering with Make‑in‑India OEMs to offer MII‑compliant products via our MSE procurement framework.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-cta">Partner with us to build reliable IT for high‑altitude India.</div>
+          <a href="mailto:info@mirpa.in" class="footer-email">info@mirpa.in</a>
+          <div class="footer-loc">Based in Ladakh, India</div>
+          <div class="oem-note">
+            <strong>OEMs:</strong> To discuss partnership and high‑altitude distribution, write to <a href="mailto:info@mirpa.in" style="color: var(--azure); text-decoration:none;">info@mirpa.in</a>.
+          </div>
+        </div>
+
+        <div class="tag-cloud">
+          <div class="tag">DPIIT Recognised</div>
+          <div class="tag">MSE‑Registered</div>
+          <div class="tag">GeM‑Registered Vendor</div>
+          <div class="tag">B2G & B2B Ready</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; Mirpa Enterprises Private Limited. Engineered for altitude.</div>
+      </div>
+
+      <div class="privacy-section">
+        <h4>Privacy Policy</h4>
+        <p>We do not collect personal data through this website. Contact information is used solely to respond to inquiries. No tracking, no sharing.</p>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
