@@ -15,7 +15,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:      #0A0F18; /* Darker, sleek tech canvas */
+      --navy:      #0A0F18; 
       --navy-mid:  #111823;
       --navy-card: rgba(20, 29, 43, 0.6);
       --azure:     #4A8FD4;
@@ -25,7 +25,7 @@
       --terra:     #C99B63;
       --white:     #F3F6FA;
       --dim:       #94A7B5;
-      --radius:    8px; /* Tighter corners for modern luxury aesthetic */
+      --radius:    8px; 
       --transition: cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
     }
 
@@ -291,14 +291,14 @@
 
     .footer-top { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; margin-bottom: 80px; }
 
-    .footer-cta { font-size: 1.35rem; font-weight: 400; color: var(--white); margin-bottom: 24px; letter-spacing: -0.01em; }
+    .footer-cta { font-size: 1.05rem; font-weight: 400; color: var(--dim); margin-bottom: 16px; letter-spacing: 0.02em; }
     .footer-email {
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      font-weight: 700; color: var(--azure); text-decoration: none;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 600; color: var(--azure); text-decoration: none;
       display: inline-block; margin-bottom: 16px; transition: color var(--transition);
     }
     .footer-email:hover { color: var(--glacier); }
-    .footer-loc { font-size: 0.95rem; color: var(--dim); font-weight: 300; margin-bottom: 36px; }
+    .footer-loc { font-size: 0.85rem; color: var(--dim); font-weight: 300; margin-bottom: 36px; }
 
     .oem-note {
       font-size: 0.85rem; color: var(--dim); background: rgba(255, 255, 255, 0.01);
@@ -330,6 +330,7 @@
 </head>
 <body>
 
+  <!-- 1. Sticky Navigation -->
   <nav>
     <a href="#" class="nav-logo">MIRPA</a>
     <ul class="nav-links">
@@ -341,6 +342,7 @@
     </ul>
   </nav>
 
+  <!-- 2. Hero Section -->
   <header class="hero">
     <div class="hero-sky"></div>
     <div class="stars">
@@ -367,6 +369,7 @@
     </div>
   </header>
 
+  <!-- 3. Ecosystem Section -->
   <section id="ecosystem" class="ecosystem">
     <div class="container">
       <div class="section-eyebrow">Procurement Engine</div>
@@ -374,6 +377,7 @@
       <p class="section-lead">We are building an institution‑ready, brand‑agnostic hardware aggregation model for high‑altitude deployments — servers, workstations, networking, components.</p>
 
       <div class="ecosystem-grid">
+        <!-- Card 1 -->
         <div class="eco-card">
           <div class="svc-icon icon-chip"></div>
           <h3 class="eco-name">Multi‑OEM Sourcing Capability</h3>
@@ -384,12 +388,14 @@
           </div>
         </div>
 
+        <!-- Card 2 -->
         <div class="eco-card">
           <div class="svc-icon icon-indigenous"></div>
           <h3 class="eco-name">Make‑in‑India Alignment</h3>
           <p class="eco-desc">Integrating indigenous server and networking brands under MII policies, leveraging MSE enablement on GeM.</p>
         </div>
 
+        <!-- Card 3 -->
         <div class="eco-card">
           <div class="svc-icon icon-tender"></div>
           <h3 class="eco-name">Institutional Delivery</h3>
@@ -405,6 +411,7 @@
     </div>
   </section>
 
+  <!-- 4. Our Vision Section -->
   <section id="vision" class="vision">
     <div class="container">
       <div class="section-eyebrow">Strategic Blueprint</div>
@@ -412,6 +419,7 @@
       <p class="section-lead">Everything we build serves a long‑term purpose.</p>
 
       <div class="vision-list">
+        <!-- Pillar 01 -->
         <div class="vision-item">
           <div class="vision-num">01</div>
           <div class="vision-body">
@@ -420,6 +428,7 @@
           </div>
         </div>
 
+        <!-- Pillar 02 -->
         <div class="vision-item">
           <div class="vision-num">02</div>
           <div class="vision-body">
@@ -428,6 +437,7 @@
           </div>
         </div>
 
+        <!-- Pillar 03 -->
         <div class="vision-item">
           <div class="vision-num">03</div>
           <div class="vision-body">
@@ -436,14 +446,16 @@
           </div>
         </div>
 
+        <!-- Pillar 04 -->
         <div class="vision-item">
           <div class="vision-num">04</div>
           <div class="vision-body">
             <h3>Greenfield Infrastructure</h3>
-            <p>Built from scratch. Built for extremes. We design and deploy micro‑data centres, renewable‑powered network nodes, and digital public infrastructure for the region.</p>
+            <p>Built from scratch. Built for extremes. We engineer greenfield environmental projects integrated with adaptive technology solutions and resilient digital public infrastructure tailored for the region.</p>
           </div>
         </div>
 
+        <!-- Pillar 05 -->
         <div class="vision-item">
           <div class="vision-num">05</div>
           <div class="vision-body">
@@ -455,6 +467,7 @@
     </div>
   </section>
 
+  <!-- 5. Future Ventures -->
   <section id="ventures" class="ventures">
     <div class="container">
       <div class="section-eyebrow">Next Horizons</div>
@@ -469,9 +482,9 @@
         </div>
 
         <div class="venture-card">
-          <span class="venture-tag">Engineering R&amp;D</span>
-          <h3>Renewable‑Powered Edge Nodes</h3>
-          <p>We are designing compact, solar‑powered IT nodes that can operate where connectivity and grid power are unreliable — bringing digital services closer to remote communities.</p>
+          <span class="venture-tag">Development Framework</span>
+          <h3>Tech Venture Establishments</h3>
+          <p>We are structuring specialized frameworks to drive tech-oriented venture establishments, scaling manpower resourcing in the tech field and ensuring seamless integration of technology in the daily lives of remote communities.</p>
         </div>
 
         <div class="venture-card">
@@ -483,6 +496,7 @@
     </div>
   </section>
 
+  <!-- 6. Contact & Footer -->
   <footer id="contact">
     <div class="container">
       <div class="footer-top">
@@ -507,6 +521,7 @@
         <div>&copy; Mirpa Enterprises Private Limited. Engineered for altitude.</div>
       </div>
 
+      <!-- 7. Privacy Policy -->
       <div class="privacy-section">
         <h4>Privacy Policy</h4>
         <p>We do not collect personal data through this website. Contact information is used solely to respond to inquiries. No tracking, no sharing.</p>
